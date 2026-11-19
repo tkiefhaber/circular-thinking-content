@@ -1,0 +1,1224 @@
+{
+ "version": 1,
+ "schema": 1,
+ "units": [
+  {
+   "id": "u1",
+   "title": "Find your way around",
+   "lessons": [
+    "alphabet",
+    "halfwhole",
+    "staff"
+   ]
+  },
+  {
+   "id": "u2",
+   "title": "Major scales",
+   "lessons": [
+    "recipe",
+    "sharps",
+    "flats"
+   ]
+  },
+  {
+   "id": "u3",
+   "title": "The circle of fifths",
+   "lessons": [
+    "circle",
+    "keysig",
+    "relative"
+   ]
+  },
+  {
+   "id": "u4",
+   "title": "Intervals",
+   "lessons": [
+    "intervals"
+   ]
+  },
+  {
+   "id": "u5",
+   "title": "Chords",
+   "lessons": [
+    "triads",
+    "dimaug",
+    "sevenths"
+   ]
+  },
+  {
+   "id": "u6",
+   "title": "Chords in a key & progressions",
+   "lessons": [
+    "diatonic",
+    "progressions",
+    "circleprog"
+   ]
+  },
+  {
+   "id": "u7",
+   "title": "Minor & pentatonic scales",
+   "lessons": [
+    "minor",
+    "pentatonic"
+   ]
+  }
+ ],
+ "lessons": {
+  "alphabet": {
+   "id": "alphabet",
+   "title": "The musical alphabet",
+   "summary": "Seven letters, octaves, and where the natural notes live on your instrument.",
+   "addedIn": 1,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "Music uses seven letter names: **A B C D E F G**. After G you loop back to A. Each time you come back around to the same letter you've gone up an **octave**. Two notes an octave apart sound like the same note, one higher."
+    },
+    {
+     "type": "text",
+     "only": "piano",
+     "md": "On the piano the black keys come in groups of two and three. **C** is the white key just left of each group of two. From there the white keys run C D E F G A B, then C again."
+    },
+    {
+     "type": "text",
+     "only": "guitar",
+     "md": "The six open strings, low to high, are **E A D G B E** (one way to remember: _Eddie Ate Dynamite, Good Bye Eddie_). Every fret raises the note by the smallest step. The natural notes aren't evenly spaced along a string, which is why fretboard knowledge takes reps. Fret 12 is the octave, where the pattern starts over."
+    },
+    {
+     "type": "text",
+     "only": "bass",
+     "md": "The four open strings, low to high, are **E A D G**, the same as the lowest four guitar strings but an octave down. Every fret raises the note by the smallest step, and fret 12 is the octave where the pattern repeats."
+    },
+    {
+     "type": "explorer",
+     "name": "notes",
+     "options": {
+      "naturals": true
+     },
+     "caption": "Every natural note is labeled. Tap one to hear it and see the same letter everywhere else."
+    }
+   ],
+   "practice": [
+    {
+     "gen": "idNatural",
+     "weight": 3,
+     "params": {}
+    },
+    {
+     "gen": "findNatural",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "alphabet",
+     "weight": 2,
+     "params": {}
+    }
+   ],
+   "homework": [
+    "Say the musical alphabet out loud starting on {pick:C|D|E|F|G|A|B}, forward then backward, three times.",
+    {
+     "piano": "Play every {pick:C|F|G|D|A} on the keyboard from lowest to highest, naming each one.",
+     "fretted": "Find every {pick:C|F|G|D|A} on frets 0 to 12 without looking at the app, then check yourself in the Find the notes drill."
+    },
+    {
+     "piano": "Play C D E F G A B C slowly with your right hand, saying each name.",
+     "fretted": "Play all the natural notes on the {lowstring} string from fret 0 to 12, saying each name."
+    },
+    "Spend two minutes in the Find the notes drill with naturals only."
+   ]
+  },
+  "halfwhole": {
+   "id": "halfwhole",
+   "title": "Sharps, flats, half & whole steps",
+   "summary": "The 12 notes, how sharps and flats work, and the two spots with no note in between.",
+   "addedIn": 1,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "Between most natural notes there's one more note. Count them all and you get **12 different notes** before the pattern repeats.\n\nA **half step** is the smallest move: one key to the very next key (black or white) on piano, or one fret on guitar and bass. A **whole step** is two half steps.\n\nA **sharp (♯)** raises a note a half step. A **flat (♭)** lowers it. The note between C and D can be called C♯ or D♭: same sound, two names. Which name you use depends on the key you're in, which the scales unit explains.\n\nTwo pairs have nothing in between: **E–F** and **B–C**. They're already a half step apart."
+    },
+    {
+     "type": "text",
+     "only": "piano",
+     "md": "You can see this on the keyboard: there's no black key between E and F, or between B and C."
+    },
+    {
+     "type": "text",
+     "only": "guitar",
+     "md": "On the fretboard, E to F and B to C are one fret apart. Every other pair of natural notes is two frets apart."
+    },
+    {
+     "type": "text",
+     "only": "bass",
+     "md": "On the fretboard, E to F and B to C are one fret apart. Every other pair of natural notes is two frets apart."
+    },
+    {
+     "type": "explorer",
+     "name": "notes",
+     "options": {
+      "naturals": false
+     },
+     "caption": "All 12 notes. Tap any to hear it and see where else it lives."
+    }
+   ],
+   "practice": [
+    {
+     "gen": "halfWhole",
+     "weight": 3,
+     "params": {}
+    },
+    {
+     "gen": "enharmonic",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "idAny",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "findAny",
+     "weight": 1,
+     "params": {}
+    }
+   ],
+   "homework": [
+    "Starting on {pick:C|G|D}, play up 12 half steps to the octave, naming each note with a sharp name. Then come back down using flat names.",
+    {
+     "piano": "Play every E–F and B–C pair on the keyboard and notice there is no black key between them.",
+     "fretted": "On one string, play E to F and B to C (one fret each), then F to G (two frets). Feel the difference."
+    },
+    "Pick any note and play a whole step up, then a half step up, then a whole step up. Name each note."
+   ]
+  },
+  "staff": {
+   "id": "staff",
+   "title": "Reading notes on the staff",
+   "summary": "Lines, spaces, clefs, and ledger lines.",
+   "addedIn": 1,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "The staff is five lines. Every line and every space is one letter name, moving up the alphabet as you go up. A **clef** tells you which letter goes where.\n\n**Treble clef** (guitar and the piano's right hand): lines from the bottom are **E G B D F** (_Every Good Boy Does Fine_). Spaces spell **F A C E**.\n\n**Bass clef** (bass and the piano's left hand): lines are **G B D F A** (_Good Boys Do Fine Always_). Spaces are **A C E G** (_All Cows Eat Grass_).\n\nNotes above or below the staff get short **ledger lines**. Middle C sits on one ledger line below the treble staff, or one above the bass staff."
+    },
+    {
+     "type": "text",
+     "only": "guitar",
+     "md": "Guitar music is written in treble clef but sounds an octave lower than written. The note names don't change."
+    },
+    {
+     "type": "text",
+     "only": "bass",
+     "md": "Bass music is written in bass clef and sounds an octave lower than written. The note names don't change."
+    },
+    {
+     "type": "explorer",
+     "name": "staff",
+     "options": {},
+     "caption": "Tap any line or space to hear it and see its name."
+    }
+   ],
+   "practice": [
+    {
+     "gen": "staffName",
+     "weight": 5,
+     "params": {}
+    },
+    {
+     "gen": "staffPlace",
+     "weight": 3,
+     "params": {}
+    }
+   ],
+   "homework": [
+    {
+     "piano": "Write the treble and bass clef line and space mnemonics from memory on paper.",
+     "guitar": "Write the treble clef line and space mnemonics from memory on paper.",
+     "bass": "Write the bass clef line and space mnemonics from memory on paper."
+    },
+    "Draw a five-line staff on paper and write the notes C D E F G A B C going up. Check them against the staff explorer.",
+    "Do one round of the Staff sprint drill and beat your score."
+   ]
+  },
+  "recipe": {
+   "id": "recipe",
+   "title": "The major scale recipe",
+   "summary": "W W H W W W H, scale degrees, and the one-letter-each spelling rule.",
+   "addedIn": 1,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "A scale is a set of notes in order from one note up to its octave. The **major scale** is the one most music is built from, and it follows a fixed pattern of steps:\n\n## W W H W W W H\n\nThink of it as a stencil: slide it to start on any note and it tells you which notes to use. Start on C and you land on only natural notes: C D E F G A B C. The half steps fall between E–F (3 to 4) and B–C (7 to 8).\n\nNumber the notes 1 through 7. These **scale degrees** let you talk about music without caring about the key: \"the 5\" in C is G, \"the 5\" in D is A.\n\nSpelling rule: a major scale uses **each letter exactly once**. So in G major the 7th note is F♯, never G♭, because G is already taken."
+    },
+    {
+     "type": "explorer",
+     "name": "scale",
+     "options": {
+      "keys": [
+       "C",
+       "G",
+       "F"
+      ],
+      "types": [
+       "major"
+      ]
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "recipe",
+     "weight": 3,
+     "params": {}
+    },
+    {
+     "gen": "degree",
+     "weight": 2,
+     "params": {
+      "keys": [
+       "C",
+       "G",
+       "F"
+      ]
+     }
+    },
+    {
+     "gen": "writeScale",
+     "weight": 2,
+     "params": {
+      "keys": [
+       "C",
+       "G",
+       "F"
+      ]
+     }
+    },
+    {
+     "gen": "pickScale",
+     "weight": 1,
+     "params": {
+      "keys": [
+       "C",
+       "G"
+      ]
+     }
+    }
+   ],
+   "homework": [
+    "Write W W H W W W H on a sticky note and put it where you practice.",
+    "Play C major up and down twice, saying the degree numbers (1 2 3 4 5 6 7 8) instead of the letters.",
+    "Build {pick:G|F} major on paper using only the recipe, then check it in the explorer."
+   ]
+  },
+  "sharps": {
+   "id": "sharps",
+   "title": "Major scales with sharps",
+   "summary": "G, D, A, E and B major. Each new key adds one sharp.",
+   "addedIn": 1,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "Run the recipe from G: G A B C D E **F♯** G. To keep the half step between 7 and 8, F has to go up to F♯.\n\nNow start from D, the 5th note of G major: D E **F♯** G A B **C♯** D. You keep F♯ and pick up C♯. Every time you start a new scale on the 5th of the last one, you add one sharp. That's the circle of fifths showing up early; unit 3 covers it properly.\n\nKeys in this lesson: **G** (1♯), **D** (2♯), **A** (3♯), **E** (4♯), **B** (5♯)."
+    },
+    {
+     "type": "text",
+     "only": "guitar",
+     "md": "On guitar, one major scale shape is movable: play it from the root on the low E string and slide the whole shape to change keys. Use the explorer below to see each key's notes in place."
+    },
+    {
+     "type": "text",
+     "only": "bass",
+     "md": "On bass, a one-octave major scale fits in one position: root with your 2nd finger, then 4-1-2-4 on the next strings. Slide it anywhere to change keys."
+    },
+    {
+     "type": "explorer",
+     "name": "scale",
+     "options": {
+      "keys": [
+       "G",
+       "D",
+       "A",
+       "E",
+       "B"
+      ],
+      "types": [
+       "major"
+      ]
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "writeScale",
+     "weight": 2,
+     "params": {
+      "keys": [
+       "G",
+       "D",
+       "A",
+       "E",
+       "B"
+      ]
+     }
+    },
+    {
+     "gen": "staffScale",
+     "weight": 1,
+     "params": {
+      "keys": [
+       "G",
+       "D",
+       "A"
+      ]
+     }
+    },
+    {
+     "gen": "pickScale",
+     "weight": 2,
+     "params": {
+      "keys": [
+       "G",
+       "D",
+       "A",
+       "E",
+       "B"
+      ]
+     }
+    },
+    {
+     "gen": "degree",
+     "weight": 2,
+     "params": {
+      "keys": [
+       "G",
+       "D",
+       "A",
+       "E",
+       "B"
+      ]
+     }
+    },
+    {
+     "gen": "inScale",
+     "weight": 1,
+     "params": {
+      "keys": [
+       "G",
+       "D",
+       "A",
+       "E",
+       "B"
+      ]
+     }
+    }
+   ],
+   "homework": [
+    "Play {pick:G|D|A|E|B} major up and down two octaves, saying the note names.",
+    "Write out all five sharp-key scales (G D A E B) on paper from memory. Check them in the explorer.",
+    "Play D major, then A major, and listen for the one note that changes (G becomes G♯)."
+   ]
+  },
+  "flats": {
+   "id": "flats",
+   "title": "Major scales with flats",
+   "summary": "F, B♭, E♭, A♭ and D♭ major. Each new key adds one flat.",
+   "addedIn": 1,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "Flat keys come from going the other way. Start on F: F G A **B♭** C D E F. The half step between 3 and 4 needs B lowered to B♭.\n\nEach key a 5th lower (the 4th note of the last key) adds a flat: **F** (1♭), **B♭** (2♭), **E♭** (3♭), **A♭** (4♭), **D♭** (5♭).\n\nSame spelling rule: each letter once. In F major the 4th note is B♭, never A♯, because A is already the 3rd."
+    },
+    {
+     "type": "explorer",
+     "name": "scale",
+     "options": {
+      "keys": [
+       "F",
+       "Bb",
+       "Eb",
+       "Ab",
+       "Db"
+      ],
+      "types": [
+       "major"
+      ]
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "writeScale",
+     "weight": 2,
+     "params": {
+      "keys": [
+       "F",
+       "Bb",
+       "Eb",
+       "Ab",
+       "Db"
+      ]
+     }
+    },
+    {
+     "gen": "staffScale",
+     "weight": 1,
+     "params": {
+      "keys": [
+       "F",
+       "Bb",
+       "Eb"
+      ]
+     }
+    },
+    {
+     "gen": "pickScale",
+     "weight": 2,
+     "params": {
+      "keys": [
+       "F",
+       "Bb",
+       "Eb",
+       "Ab",
+       "Db"
+      ]
+     }
+    },
+    {
+     "gen": "degree",
+     "weight": 2,
+     "params": {
+      "keys": [
+       "F",
+       "Bb",
+       "Eb",
+       "Ab",
+       "Db"
+      ]
+     }
+    },
+    {
+     "gen": "inScale",
+     "weight": 1,
+     "params": {
+      "keys": [
+       "F",
+       "Bb",
+       "Eb",
+       "Ab",
+       "Db"
+      ]
+     }
+    }
+   ],
+   "homework": [
+    "Play {pick:F|B♭|E♭|A♭|D♭} major up and down two times, naming the notes with flats.",
+    "Write F major on paper. Then explain to yourself why its 4th note is B♭ and never A♯.",
+    "Pick one sharp key and one flat key. Play them back to back and name every note."
+   ]
+  },
+  "circle": {
+   "id": "circle",
+   "title": "Going around the circle",
+   "summary": "Fifths clockwise, fourths counter-clockwise, and why neighbors matter.",
+   "addedIn": 1,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "Put the 12 keys in a ring where each step clockwise goes up a **perfect 5th** (7 half steps). That's the circle of fifths.\n\nClockwise from C adds one sharp each step: **C G D A E B F♯**. Counter-clockwise adds one flat each step: **C F B♭ E♭ A♭ D♭ G♭**. At the bottom, F♯ and G♭ are the same notes on your instrument with different names.\n\nWhy it matters: neighbors on the circle share all but one note. That makes them easy to move between, and it's why so many songs borrow chords from the keys right next door. Unit 6 builds on this.\n\nMemory aid for the sharp side: _Good Deeds Always Earn Blessings_."
+    },
+    {
+     "type": "text",
+     "only": "guitar",
+     "md": "On guitar, a 5th up is one string higher and two frets up (on the low four strings). You can walk the circle with one shape."
+    },
+    {
+     "type": "text",
+     "only": "bass",
+     "md": "On bass, a 5th up is one string higher and two frets up. A 4th up is straight across to the next string, same fret. You can walk the circle without moving much."
+    },
+    {
+     "type": "explorer",
+     "name": "circle",
+     "options": {
+      "mode": "basic"
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "circleNext",
+     "weight": 4,
+     "params": {}
+    },
+    {
+     "gen": "circleBlank",
+     "weight": 3,
+     "params": {}
+    },
+    {
+     "gen": "sigCount",
+     "weight": 1,
+     "params": {}
+    }
+   ],
+   "homework": [
+    "Draw the circle of fifths from memory, outer ring only. Check it against the app.",
+    "Play the root notes around the circle clockwise: C G D A E B F♯ D♭ A♭ E♭ B♭ F C.",
+    "Say the circle counter-clockwise from C out loud without stopping."
+   ]
+  },
+  "keysig": {
+   "id": "keysig",
+   "title": "Key signatures",
+   "summary": "The order of sharps and flats, and two shortcuts to name any key.",
+   "addedIn": 1,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "Instead of writing a sharp on every F in a G major song, music puts the sharps or flats once at the start of each line. That's the **key signature**.\n\nSharps always appear in the same order: **F C G D A E B** (_Father Charles Goes Down And Ends Battle_). Flats are the same list backwards: **B E A D G C F**.\n\nTwo shortcuts:\n\n- **Sharp keys:** the last sharp is the 7th note, so go up a half step to find the key. Last sharp C♯ → D major.\n- **Flat keys:** the second-to-last flat is the key. B♭ E♭ A♭ → E♭ major. F major (one flat) you just memorize."
+    },
+    {
+     "type": "explorer",
+     "name": "circle",
+     "options": {
+      "mode": "keysig"
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "sigCount",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "sigToKey",
+     "weight": 3,
+     "params": {}
+    },
+    {
+     "gen": "keyFromCount",
+     "weight": 1,
+     "params": {}
+    },
+    {
+     "gen": "sigOrder",
+     "weight": 1,
+     "params": {}
+    },
+    {
+     "gen": "sigNotes",
+     "weight": 1,
+     "params": {}
+    }
+   ],
+   "homework": [
+    "Write the order of sharps and the order of flats on paper five times each.",
+    "Name the key signature of {pick:A|E|E♭|A♭|B|D♭} major using only the shortcuts, then check it in the explorer.",
+    "Find a piece of sheet music (any song) and name its key from the key signature."
+   ]
+  },
+  "relative": {
+   "id": "relative",
+   "title": "Relative minor keys",
+   "summary": "Same notes, different home. The inner ring of the circle.",
+   "addedIn": 1,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "Every major key has a minor key that uses the exact same notes and key signature. That's its **relative minor**.\n\nIt starts on the **6th note** of the major scale. C major is C D E F G A B, so the relative minor is **A minor**: same notes, but A is home.\n\nShortcut: go **down three half steps** from the major key. G → E minor. F → D minor.\n\nOn the circle, the relative minor sits on the inner ring right below its major."
+    },
+    {
+     "type": "explorer",
+     "name": "circle",
+     "options": {
+      "mode": "relative"
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "relMinor",
+     "weight": 3,
+     "params": {}
+    },
+    {
+     "gen": "relMajor",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "minorSig",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "writeMinor",
+     "weight": 1,
+     "params": {}
+    }
+   ],
+   "homework": [
+    "Play {pick:C major then A minor|G major then E minor|F major then D minor} scales back to back. Same notes, different home. Listen for the mood change.",
+    "Write the inner ring of the circle (all 12 relative minors) from memory.",
+    "Think of a song you know in a minor key and figure out its relative major."
+   ]
+  },
+  "intervals": {
+   "id": "intervals",
+   "title": "Measuring distance: intervals",
+   "summary": "Letter count for the number, half steps for the quality.",
+   "addedIn": 1,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "An **interval** is the distance between two notes. It has two parts.\n\n**Number:** count letter names, including both ends. C up to E is C-D-E, three letters, so it's a 3rd.\n\n**Quality:** count half steps to tell the versions apart. C to E is 4 half steps, a **major 3rd**. C to E♭ is 3, a **minor 3rd**."
+    },
+    {
+     "type": "text",
+     "only": null,
+     "md": "- **minor 2nd**: 1 half step · C → D♭\n- **major 2nd**: 2 half steps · C → D\n- **minor 3rd**: 3 half steps · C → E♭\n- **major 3rd**: 4 half steps · C → E\n- **perfect 4th**: 5 half steps · C → F\n- **tritone (aug. 4th)**: 6 half steps · C → F♯\n- **perfect 5th**: 7 half steps · C → G\n- **minor 6th**: 8 half steps · C → A♭\n- **major 6th**: 9 half steps · C → A\n- **minor 7th**: 10 half steps · C → B♭\n- **major 7th**: 11 half steps · C → B\n- **octave**: 12 half steps · C → C\n\nFrom the root of a major scale, the 2nd, 3rd, 6th and 7th are all **major**. The 4th, 5th and octave are called **perfect**."
+    },
+    {
+     "type": "explorer",
+     "name": "interval",
+     "options": {},
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "intName",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "intBuild",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "intSemis",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "intShow",
+     "weight": 2,
+     "params": {}
+    }
+   ],
+   "homework": [
+    "Learn one song-start per interval: \"Here Comes the Bride\" starts with a perfect 4th, \"Twinkle Twinkle\" jumps a perfect 5th. Hum each.",
+    "From {pick:C|G|D|A}, play every interval from a minor 2nd up to the octave, naming each.",
+    {
+     "piano": "Play major 3rds and minor 3rds from every white key and listen to the difference.",
+     "fretted": "Find a major 3rd and a perfect 5th above any note on the {lowstring} string without counting frets one by one."
+    }
+   ]
+  },
+  "triads": {
+   "id": "triads",
+   "title": "Major and minor triads",
+   "summary": "Stacking thirds: 1 3 5 and 1 ♭3 5.",
+   "addedIn": 1,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "A **triad** is three notes stacked in thirds: a root, a 3rd and a 5th. Take notes 1, 3 and 5 of a major scale and you've got a major triad: C major scale → **C E G**.\n\nThe 3rd sets the mood. A **major** triad is a major 3rd (4 half steps) with a minor 3rd (3) on top. A **minor** triad flips it: minor 3rd on the bottom, major 3rd on top. Lower the 3rd of C major (E → E♭) and you get C minor: **C E♭ G**.\n\nNaming: a letter alone means major (G). Add **m** for minor (Gm)."
+    },
+    {
+     "type": "text",
+     "only": "guitar",
+     "md": "The guitar shapes here are the two movable barre shapes: root on the 6th string (E shape) or the 5th string (A shape)."
+    },
+    {
+     "type": "text",
+     "only": "bass",
+     "md": "On bass, chords are usually played one note at a time (an arpeggio). The shape shown is root, 3rd and 5th in one position."
+    },
+    {
+     "type": "explorer",
+     "name": "chord",
+     "options": {
+      "quals": [
+       "maj",
+       "min"
+      ]
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "triadSpell",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "triadName",
+     "weight": 1,
+     "params": {}
+    },
+    {
+     "gen": "triadQual",
+     "weight": 1,
+     "params": {}
+    },
+    {
+     "gen": "triadPick",
+     "weight": 1,
+     "params": {}
+    },
+    {
+     "gen": "triadStaff",
+     "weight": 1,
+     "params": {}
+    },
+    {
+     "gen": "chordShow",
+     "weight": 2,
+     "params": {
+      "quals": [
+       "maj",
+       "min"
+      ]
+     }
+    }
+   ],
+   "homework": [
+    "Spell and play the major and minor triads on {pick:C, F and G|G, C and D|A, D and E}.",
+    {
+     "guitar": "Play an E-shape barre chord, then lift one finger to make it minor. Name the note that changed.",
+     "bass": "Play root-3-5 arpeggios for C, F and G major, then make each one minor.",
+     "piano": "Play every white-key major triad, then make each one minor by lowering the middle note."
+    },
+    "Listen to a song you like and decide if each chord sounds major or minor."
+   ]
+  },
+  "dimaug": {
+   "id": "dimaug",
+   "title": "Diminished and augmented",
+   "summary": "The other two triads: two minor 3rds, or two major 3rds.",
+   "addedIn": 1,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "Two more triads finish the set.\n\n**Diminished**: two minor 3rds stacked (3 + 3 half steps). Root, ♭3, ♭5. B D F is **B°**. It sounds tense and unstable.\n\n**Augmented**: two major 3rds (4 + 4). Root, 3, ♯5. C E G♯ is **C+**. It sounds like it hasn't landed anywhere."
+    },
+    {
+     "type": "text",
+     "only": null,
+     "md": "- **major**: 1 3 5 · C E G\n- **minor**: 1 ♭3 5 · C E♭ G\n- **diminished**: 1 ♭3 ♭5 · C E♭ G♭\n- **augmented**: 1 3 ♯5 · C E G♯"
+    },
+    {
+     "type": "explorer",
+     "name": "chord",
+     "options": {
+      "quals": [
+       "maj",
+       "min",
+       "dim",
+       "aug"
+      ]
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "daSpell",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "daName",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "daQual",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "daPick",
+     "weight": 1,
+     "params": {}
+    },
+    {
+     "gen": "chordShow",
+     "weight": 1,
+     "params": {
+      "quals": [
+       "maj",
+       "min",
+       "dim",
+       "aug"
+      ]
+     }
+    }
+   ],
+   "homework": [
+    "Play C, Cm, C° and C+ back to back. Name what changes each time.",
+    "Spell the diminished triad on B and on F♯ on paper.",
+    "Build an augmented triad on C, E and G♯. Notice they contain the same three notes."
+   ]
+  },
+  "sevenths": {
+   "id": "sevenths",
+   "title": "Seventh chords",
+   "summary": "Add one more third: maj7, 7, m7 and m7♭5.",
+   "addedIn": 1,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "Add one more third on top of a triad and you get a **seventh chord**: 1, 3, 5, 7.\n\n- **Major 7** (Cmaj7): major triad + major 7th → C E G B. Smooth and jazzy.\n- **Dominant 7** (C7): major triad + minor 7th → C E G B♭. Bluesy, and it wants to resolve. This is the V7 chord.\n- **Minor 7** (Cm7): minor triad + minor 7th → C E♭ G B♭.\n- **Half-diminished** (Cm7♭5): diminished triad + minor 7th → C E♭ G♭ B♭."
+    },
+    {
+     "type": "explorer",
+     "name": "chord",
+     "options": {
+      "quals": [
+       "maj7",
+       "dom7",
+       "min7",
+       "m7b5"
+      ]
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "sevSpell",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "sevName",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "sevQual",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "sevPick",
+     "weight": 1,
+     "params": {}
+    },
+    {
+     "gen": "chordShow",
+     "weight": 1,
+     "params": {
+      "quals": [
+       "maj7",
+       "dom7",
+       "min7"
+      ]
+     }
+    }
+   ],
+   "homework": [
+    "Play Gmaj7, G7 and Gm7 back to back and describe how each one feels.",
+    "Spell the dominant 7th chord in five keys: C7 F7 G7 D7 A7.",
+    "Find a blues recording and listen for the dominant 7th sound."
+   ]
+  },
+  "diatonic": {
+   "id": "diatonic",
+   "title": "Chords in a key",
+   "summary": "Seven chords from one scale: I ii iii IV V vi vii°.",
+   "addedIn": 1,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "Build a triad on every note of a major scale, using only notes from that scale, and you get seven chords that belong to the key.\n\nThe pattern of qualities is the same in every major key: **Major, minor, minor, Major, Major, minor, diminished**.\n\nRoman numerals label them by degree. Upper case is major, lower case is minor: **I ii iii IV V vi vii°**.\n\nIn C: C Dm Em F G Am B°. In G: G Am Bm C D Em F♯°. Numerals let you describe a song once and play it in any key."
+    },
+    {
+     "type": "explorer",
+     "name": "diatonic",
+     "options": {},
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "diaChord",
+     "weight": 3,
+     "params": {}
+    },
+    {
+     "gen": "diaNumeral",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "diaQuality",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "circleWedge",
+     "weight": 1,
+     "params": {}
+    }
+   ],
+   "homework": [
+    "Play all seven chords in {pick:G|D|C|A} major, saying the numeral as you play each one.",
+    "Write the chords of F major and B♭ major on paper using the M m m M M m dim pattern.",
+    "Pick a simple song you know and write its chords as Roman numerals."
+   ]
+  },
+  "progressions": {
+   "id": "progressions",
+   "title": "Common progressions",
+   "summary": "The handful of chord sequences behind a huge share of songs.",
+   "addedIn": 1,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "A **progression** is a sequence of chords. A few of them cover a huge share of popular music:\n\n- **I–IV–V–I**: the backbone of rock, folk and country. In G: G C D G.\n- **I–V–vi–IV**: the pop \"four chords\". In C: C G Am F.\n- **I–vi–IV–V**: 1950s doo-wop.\n- **ii–V–I**: the core move in jazz. In C: Dm G C.\n- **12-bar blues**: I I I I · IV IV I I · V IV I V, usually with dominant 7th chords.\n\nV to I is the strongest pull in music. The V chord contains the 7th note of the scale, a half step below home, and your ear wants it to resolve up."
+    },
+    {
+     "type": "explorer",
+     "name": "progression",
+     "options": {},
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "progSpell",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "progIdentify",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "progMissing",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "bluesBar",
+     "weight": 2,
+     "params": {}
+    }
+   ],
+   "homework": [
+    "Play I–V–vi–IV in {pick:G|C|D}, four times through, then try it in a second key.",
+    "Play a 12-bar blues in {pick:A|E|G} with 7th chords. Count the bars out loud.",
+    "Find two songs you know that use I–V–vi–IV."
+   ]
+  },
+  "circleprog": {
+   "id": "circleprog",
+   "title": "The circle as a chord map",
+   "summary": "Six chords of any key sit in one slice of the circle.",
+   "addedIn": 1,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "Pick any major key on the circle. The keys on either side are its **IV** (counter-clockwise) and **V** (clockwise). The three minor keys right below them on the inner ring are **ii, vi and iii**.\n\nFor C: outer ring F C G = IV I V. Inner ring Dm Am Em = ii vi iii. Six of the seven chords in the key, in one slice.\n\nMoving **counter-clockwise** one step at a time means moving down by 5ths, the most natural-sounding chord motion there is. ii–V–I in C (Dm → G → C) walks counter-clockwise. Many jazz standards chain these moves around the circle."
+    },
+    {
+     "type": "explorer",
+     "name": "circle",
+     "options": {
+      "mode": "wedge"
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "circleWedge",
+     "weight": 3,
+     "params": {}
+    },
+    {
+     "gen": "diaChord",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "progMissing",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "circleNext",
+     "weight": 1,
+     "params": {}
+    }
+   ],
+   "homework": [
+    "Pick a key, find its slice on the circle, and play all six chords in it.",
+    "Play a chain of dominant 7ths around the circle counter-clockwise: E7 A7 D7 G7 C7. Hear how each one pulls to the next.",
+    "Play ii–V–I in three keys next to each other on the circle: C, F and B♭."
+   ]
+  },
+  "minor": {
+   "id": "minor",
+   "title": "Minor scales",
+   "summary": "Natural minor (W H W W H W W) and harmonic minor.",
+   "addedIn": 1,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "The **natural minor** scale is the relative minor from unit 3, written from its own root. Its step pattern is **W H W W H W W**.\n\nCompared to the major scale on the same root, it lowers the 3rd, 6th and 7th. A major is A B C♯ D E F♯ G♯. A minor is A B C D E F G.\n\n**Harmonic minor** raises the 7th back up a half step, so the V chord becomes major and pulls home the way it does in a major key: A B C D E F **G♯**."
+    },
+    {
+     "type": "explorer",
+     "name": "scale",
+     "options": {
+      "keys": [
+       "A",
+       "E",
+       "B",
+       "F#",
+       "C#",
+       "D",
+       "G",
+       "C",
+       "F"
+      ],
+      "types": [
+       "minor",
+       "harmonic"
+      ]
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "writeMinor",
+     "weight": 3,
+     "params": {}
+    },
+    {
+     "gen": "minorRecipe",
+     "weight": 1,
+     "params": {}
+    },
+    {
+     "gen": "harmonic",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "pickMinor",
+     "weight": 2,
+     "params": {}
+    }
+   ],
+   "homework": [
+    "Play {pick:A|E|D} natural minor, then harmonic minor. Listen to the raised 7th.",
+    "Play A major then A minor, and name the three notes that change.",
+    "Write natural minor scales on E, B and D on paper."
+   ]
+  },
+  "pentatonic": {
+   "id": "pentatonic",
+   "title": "Pentatonic and blues scales",
+   "summary": "Five-note scales with no half steps, plus the blues note.",
+   "addedIn": 1,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "Pentatonic scales use five notes. Drop the 4th and 7th from a major scale and you get **major pentatonic**: C D E G A. With no half steps, almost nothing in it clashes.\n\n**Minor pentatonic** is the same idea from the relative minor: A C D E G (1 ♭3 4 5 ♭7). It's the first scale most guitarists learn for soloing.\n\nAdd the ♭5 to minor pentatonic and you get the **blues scale**: A C D E♭ E G."
+    },
+    {
+     "type": "text",
+     "only": "guitar",
+     "md": "Look at A minor pentatonic in the explorer with the guitar selected: the notes around fret 5 to 8 form the classic \"box\" shape."
+    },
+    {
+     "type": "explorer",
+     "name": "scale",
+     "options": {
+      "keys": [
+       "A",
+       "E",
+       "D",
+       "G",
+       "C",
+       "B"
+      ],
+      "types": [
+       "minpent",
+       "majpent",
+       "blues"
+      ]
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "writePent",
+     "weight": 3,
+     "params": {}
+    },
+    {
+     "gen": "pentDrop",
+     "weight": 1,
+     "params": {}
+    },
+    {
+     "gen": "bluesNote",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "pickPent",
+     "weight": 2,
+     "params": {}
+    }
+   ],
+   "homework": [
+    {
+     "guitar": "Learn the A minor pentatonic box at fret 5 and play it up and down slowly with a metronome.",
+     "piano": "Play {pick:A|E} minor pentatonic over two octaves.",
+     "bass": "Play {pick:A|E} minor pentatonic over two octaves."
+    },
+    "Improvise for two minutes using only minor pentatonic notes over a blues backing track.",
+    "Add the blues note to your pentatonic run and listen for where it sounds best."
+   ]
+  }
+ }
+}
