@@ -1,5 +1,5 @@
 {
- "version": 2,
+ "version": 3,
  "schema": 2,
  "units": [
   {
@@ -3169,7 +3169,21 @@
    "desc": "A note appears. Tap every place it lives on your instrument.",
    "engine": "find",
    "secs": 60,
-   "icon": "scope"
+   "icon": "scope",
+   "levels": [
+    {
+     "after": null,
+     "types": [
+      "natural"
+     ]
+    },
+    {
+     "after": "halfwhole",
+     "types": [
+      "accidental"
+     ]
+    }
+   ]
   },
   {
    "id": "name",
@@ -3177,7 +3191,21 @@
    "desc": "A spot lights up. Name it fast.",
    "engine": "name",
    "secs": 60,
-   "icon": "character.cursor.ibeam"
+   "icon": "character.cursor.ibeam",
+   "levels": [
+    {
+     "after": null,
+     "types": [
+      "natural"
+     ]
+    },
+    {
+     "after": "halfwhole",
+     "types": [
+      "accidental"
+     ]
+    }
+   ]
   },
   {
    "id": "chord",
@@ -3186,12 +3214,37 @@
    "engine": "chordhunt",
    "secs": 90,
    "icon": "square.grid.3x3.fill",
-   "params": {
-    "quals": [
-     "maj",
-     "min"
-    ]
-   }
+   "levels": [
+    {
+     "after": null,
+     "quals": [
+      "maj",
+      "min"
+     ]
+    },
+    {
+     "after": "dimaug",
+     "quals": [
+      "dim",
+      "aug"
+     ]
+    },
+    {
+     "after": "sevenths",
+     "quals": [
+      "dom7",
+      "maj7",
+      "min7"
+     ]
+    },
+    {
+     "after": "susChords",
+     "quals": [
+      "sus2",
+      "sus4"
+     ]
+    }
+   ]
   },
   {
    "id": "staff",
@@ -3199,7 +3252,21 @@
    "desc": "Read notes off the staff as fast as you can.",
    "engine": "staff",
    "secs": 60,
-   "icon": "music.note.list"
+   "icon": "music.note.list",
+   "levels": [
+    {
+     "after": null,
+     "types": [
+      "staff"
+     ]
+    },
+    {
+     "after": "staff",
+     "types": [
+      "ledger"
+     ]
+    }
+   ]
   },
   {
    "id": "earInterval",
@@ -3208,33 +3275,74 @@
    "engine": "earInterval",
    "secs": 90,
    "icon": "ear",
-   "params": {
-    "quals": [
-     "M2",
-     "m3",
-     "M3",
-     "P4",
-     "P5",
-     "M6",
-     "P8"
-    ]
-   }
+   "levels": [
+    {
+     "after": null,
+     "quals": [
+      "M3",
+      "P5",
+      "P8"
+     ]
+    },
+    {
+     "after": "intervals",
+     "quals": [
+      "M2",
+      "m3",
+      "P4"
+     ]
+    },
+    {
+     "after": "earIntervals",
+     "quals": [
+      "m2",
+      "M6",
+      "m6",
+      "m7",
+      "M7",
+      "A4"
+     ]
+    }
+   ]
   },
   {
    "id": "earChord",
    "title": "Chord Ears",
-   "desc": "Hear a chord. Major, minor, diminished or augmented?",
+   "desc": "Hear a chord and name what kind it is.",
    "engine": "earChord",
    "secs": 90,
    "icon": "waveform",
-   "params": {
-    "quals": [
-     "maj",
-     "min",
-     "dim",
-     "aug"
-    ]
-   }
+   "levels": [
+    {
+     "after": null,
+     "quals": [
+      "maj",
+      "min"
+     ]
+    },
+    {
+     "after": "dimaug",
+     "quals": [
+      "dim",
+      "aug"
+     ]
+    },
+    {
+     "after": "sevenths",
+     "quals": [
+      "dom7",
+      "maj7",
+      "min7"
+     ]
+    },
+    {
+     "after": "earChords",
+     "quals": [
+      "m7b5",
+      "sus4"
+     ]
+    }
+   ]
   },
   {
    "id": "keysig",
@@ -3242,15 +3350,68 @@
    "desc": "Name the major key from its key signature.",
    "engine": "keysig",
    "secs": 60,
-   "icon": "number"
+   "icon": "number",
+   "levels": [
+    {
+     "after": null,
+     "keys": [
+      "G",
+      "D",
+      "F"
+     ]
+    },
+    {
+     "after": "sharps",
+     "keys": [
+      "A",
+      "E",
+      "B"
+     ]
+    },
+    {
+     "after": "flats",
+     "keys": [
+      "Bb",
+      "Eb",
+      "Ab",
+      "Db"
+     ]
+    },
+    {
+     "after": "keysig",
+     "keys": [
+      "F#"
+     ]
+    }
+   ]
   },
   {
    "id": "circle",
    "title": "Circle Sprint",
-   "desc": "Find IV, V and the relative minor on the circle.",
+   "desc": "Find the V, the IV and the relative minor on the circle.",
    "engine": "circle",
    "secs": 60,
-   "icon": "circle.dashed"
+   "icon": "circle.dashed",
+   "levels": [
+    {
+     "after": null,
+     "types": [
+      "V"
+     ]
+    },
+    {
+     "after": "circle",
+     "types": [
+      "IV"
+     ]
+    },
+    {
+     "after": "relative",
+     "types": [
+      "rel"
+     ]
+    }
+   ]
   },
   {
    "id": "scaleBuild",
@@ -3259,11 +3420,72 @@
    "engine": "scaleBuild",
    "secs": 90,
    "icon": "stairs",
-   "params": {
-    "types": [
-     "major"
-    ]
-   }
+   "levels": [
+    {
+     "after": null,
+     "types": [
+      "major"
+     ],
+     "keys": [
+      "C",
+      "G",
+      "F"
+     ]
+    },
+    {
+     "after": "sharps",
+     "keys": [
+      "D",
+      "A",
+      "E",
+      "B"
+     ]
+    },
+    {
+     "after": "flats",
+     "keys": [
+      "Bb",
+      "Eb",
+      "Ab",
+      "Db"
+     ]
+    },
+    {
+     "after": "minor",
+     "types": [
+      "minor",
+      "harmonic"
+     ]
+    },
+    {
+     "after": "pentatonic",
+     "types": [
+      "majpent",
+      "minpent",
+      "blues"
+     ]
+    },
+    {
+     "after": "mixolydian",
+     "types": [
+      "dorian",
+      "mixolydian"
+     ]
+    },
+    {
+     "after": "lydianPhrygian",
+     "types": [
+      "lydian",
+      "phrygian"
+     ]
+    },
+    {
+     "after": "melodicMinor",
+     "types": [
+      "melodic"
+     ]
+    }
+   ]
   },
   {
    "id": "chordBuild",
@@ -3272,24 +3494,102 @@
    "engine": "chordBuild",
    "secs": 90,
    "icon": "cube",
-   "params": {
-    "quals": [
-     "maj",
-     "min",
-     "dim",
-     "dom7",
-     "maj7",
-     "min7"
-    ]
-   }
+   "levels": [
+    {
+     "after": null,
+     "quals": [
+      "maj",
+      "min"
+     ]
+    },
+    {
+     "after": "dimaug",
+     "quals": [
+      "dim",
+      "aug"
+     ]
+    },
+    {
+     "after": "sevenths",
+     "quals": [
+      "dom7",
+      "maj7",
+      "min7",
+      "m7b5"
+     ]
+    },
+    {
+     "after": "susChords",
+     "quals": [
+      "sus2",
+      "sus4"
+     ]
+    },
+    {
+     "after": "sixAdd9",
+     "quals": [
+      "maj6",
+      "add9"
+     ]
+    },
+    {
+     "after": "extensions",
+     "quals": [
+      "dom9",
+      "maj9",
+      "min9"
+     ]
+    },
+    {
+     "after": "dim7Altered",
+     "quals": [
+      "dim7"
+     ]
+    }
+   ]
   },
   {
    "id": "transpose",
    "title": "Transposer",
-   "desc": "Play the progression back in a new key, chord by chord.",
+   "desc": "Move a chord from one key to another.",
    "engine": "transpose",
    "secs": 90,
-   "icon": "arrow.left.arrow.right"
+   "icon": "arrow.left.arrow.right",
+   "levels": [
+    {
+     "after": null,
+     "types": [
+      "triads"
+     ],
+     "keys": [
+      "C",
+      "G",
+      "F"
+     ]
+    },
+    {
+     "after": "sharps",
+     "keys": [
+      "D",
+      "A",
+      "E"
+     ]
+    },
+    {
+     "after": "flats",
+     "keys": [
+      "Bb",
+      "Eb",
+      "Ab"
+     ]
+    },
+    {
+     "after": "twoFiveOne",
+     "types": [
+      "sevenths"
+     ]
+    }
+   ]
   }
  ]
 }

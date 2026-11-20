@@ -61,10 +61,17 @@ for (const g of c.games || []) {
   if (!GAME_ENGINES.includes(g.engine)) errs.push(`${where}: unknown engine "${g.engine}" (known: ${GAME_ENGINES.join(', ')})`);
   if (!g.title || !g.desc) errs.push(`${where} needs a title and desc`);
   if (!Number.isInteger(g.secs) || g.secs < 15) errs.push(`${where}: secs must be a whole number of at least 15`);
-  const prm = g.params || {};
-  (prm.quals || []).forEach(q => QUALS.has(q) || errs.push(`${where}: unknown option "${q}"`));
-  (prm.types || []).forEach(t => SCALE_T.includes(t) || errs.push(`${where}: unknown scale type "${t}"`));
-  (prm.keys || []).forEach(k => KEYS.includes(k) || errs.push(`${where}: unknown key "${k}"`));
+  // Engine-specific "types" values; quals and keys use the shared lists.
+  const ENGINE_TYPES = { find: ['natural', 'accidental'], name: ['natural', 'accidental'], staff: ['staff', 'ledger'], circle: ['V', 'IV', 'rel'], transpose: ['triads', 'sevenths'], scaleBuild: SCALE_T };
+  const levels = g.levels || [Object.assign({ after: null }, g.params || {})];
+  if (!levels.length || levels[0].after != null) errs.push(`${where}: the first level needs "after": null so the game is open from the start`);
+  levels.forEach((lv, i) => {
+    const lw = `${where} level ${i + 1}`;
+    if (lv.after != null && !c.lessons[lv.after]) errs.push(`${lw}: "after" names unknown lesson "${lv.after}"`);
+    (lv.quals || []).forEach(q => QUALS.has(q) || errs.push(`${lw}: unknown option "${q}"`));
+    (lv.types || []).forEach(t => (ENGINE_TYPES[g.engine] || []).includes(t) || errs.push(`${lw}: "${t}" isn't a type for the ${g.engine} engine (known: ${(ENGINE_TYPES[g.engine] || []).join(', ') || 'none'})`));
+    (lv.keys || []).forEach(k => KEYS.includes(k) || errs.push(`${lw}: unknown key "${k}"`));
+  });
 }
 if (errs.length) { console.error(errs.map(e => '✗ ' + e).join('\n')); console.error(`\n${errs.length} problem(s). Fix these before publishing.`); process.exit(1); }
 if (process.argv.includes('--bump')) { c.version += 1; fs.writeFileSync(__dirname + '/content.json', JSON.stringify(c, null, 1) + '\n'); console.log(`✓ Valid. Version bumped to ${c.version}.`); }
