@@ -2,32 +2,23 @@
 // Checks content.json before you publish it. Usage:
 //   node validate.js          -> validate only
 //   node validate.js --bump   -> validate, then increase "version" by 1 (do this for every release)
+// The lists below must match what the apps support. Adding to them needs an app update.
 const fs = require('fs');
-const GENERATORS = {
-  // name: skill it trains (params in brackets are optional)
-  idNatural: 'notes.natural', findNatural: 'notes.natural', idAny: 'notes.all', findAny: 'notes.all', alphabet: 'alphabet',
-  halfWhole: 'steps', enharmonic: 'steps', staffName: 'staff.read', staffPlace: 'staff.read',
-  recipe: 'scale.recipe', degree: 'scale.major [keys]', writeScale: 'scale.major [keys]', staffScale: 'scale.major [keys]', pickScale: 'scale.major [keys]', inScale: 'scale.major [keys]',
-  circleNext: 'circle', circleBlank: 'circle', sigCount: 'keysig', sigToKey: 'keysig', keyFromCount: 'keysig', sigOrder: 'keysig', sigNotes: 'keysig',
-  relMinor: 'relative', relMajor: 'relative', minorSig: 'relative',
-  intName: 'interval', intBuild: 'interval', intSemis: 'interval', intShow: 'interval',
-  triadSpell: 'triad', triadName: 'triad', triadStaff: 'triad', triadPick: 'triad', triadQual: 'triad',
-  daSpell: 'triad.dimaug', daName: 'triad.dimaug', daStaff: 'triad.dimaug', daPick: 'triad.dimaug', daQual: 'triad.dimaug',
-  sevSpell: 'seventh', sevName: 'seventh', sevStaff: 'seventh', sevPick: 'seventh', sevQual: 'seventh',
-  chordShow: 'chord.id [quals]', diaChord: 'diatonic [keys]', diaNumeral: 'diatonic [keys]', diaQuality: 'diatonic', circleWedge: 'diatonic',
-  progSpell: 'progression [keys]', progIdentify: 'progression [keys]', bluesBar: 'progression', progMissing: 'progression [keys]',
-  writeMinor: 'minor.scale', harmonic: 'minor.scale', minorRecipe: 'minor.scale', pickMinor: 'minor.scale',
-  writePent: 'pentatonic', pickPent: 'pentatonic', bluesNote: 'pentatonic', pentDrop: 'pentatonic',
-};
-const EXPLORERS = { notes: ['naturals'], staff: [], scale: ['keys', 'types'], chord: ['quals'], circle: ['mode'], interval: [], diatonic: [], progression: [] };
-const KEYS = ['C','G','D','A','E','B','F#','C#','F','Bb','Eb','Ab','Db','Gb','Cb'];
-const QUALS = ['maj','min','dim','aug','maj7','dom7','min7','m7b5'];
-const TYPES = ['major','minor','harmonic','majpent','minpent','blues'];
+const GENERATORS = new Set('alphabet arpAll bluesBar bluesNote borrowedName borrowedSpot chordShow circleBlank circleNext circleWedge closeKey colorFormula colorName colorPick colorSpell daName daPick daQual daSpell daStaff degree diaChord diaNumeral diaQuality earChord earInterval earProg earScale enharmonic findAny findNatural halfWhole harmonic idAny idNatural inScale intBuild intName intSemis intShow invBass invName invSlash invStaff keyFromCount melodicWrite minorChord minorNumeral minorProg minorRecipe minorSig modeColor modeFit modeName modeParent modePick modeSpell pentDrop pickMinor pickPent pickScale pivot positionKey progIdentify progMissing progNum progSpell recipe relMajor relMinor secDomBuild secDomFind sevName sevPick sevQual sevSpell sevStaff sigCount sigNotes sigOrder sigToKey staffName staffPlace staffScale transpose triadName triadPick triadQual triadSpell triadStaff tritoneSub voiceLead writeMinor writePent writeScale '.trim().split(/\s+/));
+const EXPLORERS = { notes: ['naturals'], staff: [], scale: ['keys', 'types'], chord: ['quals'], circle: ['mode'], interval: [], diatonic: ['minor', 'sevenths'], progression: ['sets', 'minor'], inversion: ['quals'], ear: ['kind'] };
+const GAME_ENGINES = ['find', 'name', 'chordhunt', 'staff', 'earInterval', 'earChord', 'keysig', 'circle', 'scaleBuild', 'chordBuild', 'transpose'];
+const KEYS = ['C','G','D','A','E','B','F#','C#','F','Bb','Eb','Ab','Db','Gb','Cb','G#','D#','A#'];
+const CHORD_Q = ['maj','min','dim','aug','maj7','dom7','min7','m7b5','sus2','sus4','maj6','add9','maj9','dom9','min9','dom13','dim7','dom7b9','dom7s9'];
+const SCALE_T = ['major','minor','harmonic','melodic','majpent','minpent','blues','dorian','phrygian','lydian','mixolydian','locrian'];
+const INTERVALS = ['m2','M2','m3','M3','P4','A4','P5','m6','M6','m7','M7','P8'];
+const NUM_PROGS = ['turnaround','251','minor251','minorAndalusian','minorPop','minor145','secDom','borrowed','bVII','rhythm'];
+const QUALS = new Set([...CHORD_Q, ...SCALE_T, ...INTERVALS, ...NUM_PROGS]);
 const MODES = ['basic','keysig','relative','wedge'];
+const SCHEMA = 2;
 const errs = [];
 const c = JSON.parse(fs.readFileSync(__dirname + '/content.json', 'utf8'));
 if (!Number.isInteger(c.version)) errs.push('"version" must be an integer');
-if (c.schema !== 1) errs.push('"schema" must be 1 (only change it together with an app update)');
+if (c.schema !== SCHEMA) errs.push(`"schema" must be ${SCHEMA} (only change it together with an app update)`);
 const inUnits = new Set();
 for (const u of c.units || []) for (const id of u.lessons) { if (!c.lessons[id]) errs.push(`unit ${u.id} lists missing lesson "${id}"`); if (inUnits.has(id)) errs.push(`lesson "${id}" is in two units`); inUnits.add(id); }
 for (const [id, l] of Object.entries(c.lessons)) {
@@ -38,21 +29,23 @@ for (const [id, l] of Object.entries(c.lessons)) {
   for (const b of l.blocks || []) {
     if (b.type === 'text') { if (!b.md) errs.push(`${where}: text block needs "md"`); if (b.only && !['piano','guitar','bass'].includes(b.only)) errs.push(`${where}: "only" must be piano, guitar or bass`); }
     else if (b.type === 'explorer') {
-      if (!EXPLORERS[b.name]) errs.push(`${where}: unknown explorer "${b.name}" (known: ${Object.keys(EXPLORERS).join(', ')})`);
+      if (!EXPLORERS[b.name]) { errs.push(`${where}: unknown explorer "${b.name}" (known: ${Object.keys(EXPLORERS).join(', ')})`); continue; }
       const o = b.options || {};
-      for (const k of Object.keys(o)) if (EXPLORERS[b.name] && !EXPLORERS[b.name].includes(k)) errs.push(`${where}: explorer ${b.name} has no option "${k}"`);
-      (o.keys || []).forEach(k => KEYS.includes(k) || ['C#','G#','D#','A#'].includes(k) || errs.push(`${where}: unknown key "${k}"`));
-      (o.types || []).forEach(t => TYPES.includes(t) || errs.push(`${where}: unknown scale type "${t}"`));
-      (o.quals || []).forEach(q => QUALS.includes(q) || errs.push(`${where}: unknown chord quality "${q}"`));
+      for (const k of Object.keys(o)) if (!EXPLORERS[b.name].includes(k)) errs.push(`${where}: explorer ${b.name} has no option "${k}"`);
+      (o.keys || []).forEach(k => KEYS.includes(k) || errs.push(`${where}: unknown key "${k}"`));
+      (o.types || []).forEach(t => SCALE_T.includes(t) || errs.push(`${where}: unknown scale type "${t}"`));
+      (o.quals || []).forEach(q => CHORD_Q.includes(q) || errs.push(`${where}: unknown chord quality "${q}"`));
+      (o.sets || []).forEach(q => NUM_PROGS.includes(q) || errs.push(`${where}: unknown progression "${q}"`));
       if (o.mode && !MODES.includes(o.mode)) errs.push(`${where}: circle mode must be one of ${MODES.join(', ')}`);
+      if (o.kind && !['intervals','chords','scales'].includes(o.kind)) errs.push(`${where}: ear kind must be intervals, chords or scales`);
     } else errs.push(`${where}: block type must be "text" or "explorer"`);
   }
   if (!(l.practice || []).length) errs.push(`${where} needs at least one practice entry`);
   for (const p of l.practice || []) {
-    if (!GENERATORS[p.gen]) errs.push(`${where}: unknown generator "${p.gen}"`);
+    if (!GENERATORS.has(p.gen)) errs.push(`${where}: unknown generator "${p.gen}"`);
     if (!Number.isInteger(p.weight) || p.weight < 1) errs.push(`${where}: "${p.gen}" needs an integer weight >= 1`);
     ((p.params || {}).keys || []).forEach(k => KEYS.includes(k) || errs.push(`${where}: "${p.gen}" unknown key "${k}"`));
-    ((p.params || {}).quals || []).forEach(q => QUALS.includes(q) || errs.push(`${where}: "${p.gen}" unknown quality "${q}"`));
+    ((p.params || {}).quals || []).forEach(q => QUALS.has(q) || errs.push(`${where}: "${p.gen}" unknown option "${q}"`));
   }
   if ((l.homework || []).length < 3) errs.push(`${where} should have at least 3 homework items`);
   for (const h of l.homework || []) {
@@ -61,6 +54,18 @@ for (const [id, l] of Object.entries(c.lessons)) {
     for (const t of texts) { const left = t.replace(/\{pick:[^}]+\}|\{inst\}|\{lowstring\}/g, ''); if (/[{}]/.test(left)) errs.push(`${where}: homework has an unknown {token}: ${t}`); }
   }
 }
+const gids = new Set();
+for (const g of c.games || []) {
+  const where = `game "${g.id}"`;
+  if (gids.has(g.id)) errs.push(`${where} is listed twice`); gids.add(g.id);
+  if (!GAME_ENGINES.includes(g.engine)) errs.push(`${where}: unknown engine "${g.engine}" (known: ${GAME_ENGINES.join(', ')})`);
+  if (!g.title || !g.desc) errs.push(`${where} needs a title and desc`);
+  if (!Number.isInteger(g.secs) || g.secs < 15) errs.push(`${where}: secs must be a whole number of at least 15`);
+  const prm = g.params || {};
+  (prm.quals || []).forEach(q => QUALS.has(q) || errs.push(`${where}: unknown option "${q}"`));
+  (prm.types || []).forEach(t => SCALE_T.includes(t) || errs.push(`${where}: unknown scale type "${t}"`));
+  (prm.keys || []).forEach(k => KEYS.includes(k) || errs.push(`${where}: unknown key "${k}"`));
+}
 if (errs.length) { console.error(errs.map(e => '✗ ' + e).join('\n')); console.error(`\n${errs.length} problem(s). Fix these before publishing.`); process.exit(1); }
 if (process.argv.includes('--bump')) { c.version += 1; fs.writeFileSync(__dirname + '/content.json', JSON.stringify(c, null, 1) + '\n'); console.log(`✓ Valid. Version bumped to ${c.version}.`); }
-else console.log(`✓ Valid. ${Object.keys(c.lessons).length} lessons in ${c.units.length} units, version ${c.version}.`);
+else console.log(`✓ Valid. ${Object.keys(c.lessons).length} lessons in ${c.units.length} units, ${(c.games || []).length} games, version ${c.version}.`);

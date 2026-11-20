@@ -1,6 +1,6 @@
 {
- "version": 1,
- "schema": 1,
+ "version": 2,
+ "schema": 2,
  "units": [
   {
    "id": "u1",
@@ -60,6 +60,86 @@
    "lessons": [
     "minor",
     "pentatonic"
+   ]
+  },
+  {
+   "id": "u8",
+   "title": "Modes",
+   "lessons": [
+    "modesIntro",
+    "dorian",
+    "mixolydian",
+    "lydianPhrygian",
+    "locrianFit"
+   ]
+  },
+  {
+   "id": "u9",
+   "title": "Inversions & voice leading",
+   "lessons": [
+    "triadInversions",
+    "seventhInversions",
+    "voiceLeading",
+    "slashChords"
+   ]
+  },
+  {
+   "id": "u10",
+   "title": "More chord colors",
+   "lessons": [
+    "susChords",
+    "sixAdd9",
+    "extensions",
+    "dim7Altered"
+   ]
+  },
+  {
+   "id": "u11",
+   "title": "Minor keys in depth",
+   "lessons": [
+    "melodicMinor",
+    "minorChords",
+    "minorProgressions"
+   ]
+  },
+  {
+   "id": "u12",
+   "title": "Harmony moves",
+   "lessons": [
+    "secondaryDominants",
+    "borrowedChords",
+    "twoFiveOne",
+    "turnarounds",
+    "tritoneSubs"
+   ]
+  },
+  {
+   "id": "u13",
+   "title": "Changing keys",
+   "lessons": [
+    "modulation",
+    "pivotChords",
+    "transposing"
+   ]
+  },
+  {
+   "id": "u14",
+   "title": "Ear training",
+   "lessons": [
+    "earIntervals",
+    "earChords",
+    "earScales",
+    "earProgressions"
+   ]
+  },
+  {
+   "id": "u15",
+   "title": "Owning your instrument",
+   "lessons": [
+    "octaveShapes",
+    "arpeggios",
+    "scalePositions",
+    "playingChanges"
    ]
   }
  ],
@@ -1219,6 +1299,1997 @@
     "Improvise for two minutes using only minor pentatonic notes over a blues backing track.",
     "Add the blues note to your pentatonic run and listen for where it sounds best."
    ]
+  },
+  "modesIntro": {
+   "id": "modesIntro",
+   "title": "How modes work",
+   "summary": "Same notes, different home: seven modes from one major scale.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "Play the C major scale but start and end on D instead of C: D E F G A B C D. Nothing changed except where \"home\" is, and it sounds completely different. That new scale is a **mode**.\n\nEvery major scale gives you seven modes, one starting on each note:\n\n- **Ionian** (start on 1): the major scale itself\n- **Dorian** (start on 2)\n- **Phrygian** (start on 3)\n- **Lydian** (start on 4)\n- **Mixolydian** (start on 5)\n- **Aeolian** (start on 6): the natural minor scale\n- **Locrian** (start on 7)\n\nThere are two ways to think about them, and both are useful. The **parent scale** way: D Dorian has the same notes as C major, starting on D. The **color note** way: compare the mode to plain major or minor on the same root, and notice the one or two notes that differ. Lesson by lesson we'll use both."
+    },
+    {
+     "type": "explorer",
+     "name": "scale",
+     "options": {
+      "keys": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "A",
+       "B"
+      ],
+      "types": [
+       "major",
+       "dorian",
+       "phrygian",
+       "lydian",
+       "mixolydian",
+       "minor",
+       "locrian"
+      ]
+     },
+     "caption": "Pick a starting note and its matching mode to walk through all seven modes of C major."
+    }
+   ],
+   "practice": [
+    {
+     "gen": "modeParent",
+     "weight": 3,
+     "params": {}
+    },
+    {
+     "gen": "modeName",
+     "weight": 3,
+     "params": {}
+    },
+    {
+     "gen": "modeSpell",
+     "weight": 2,
+     "params": {}
+    }
+   ],
+   "homework": [
+    "Play the white keys (or the C major scale on your instrument) from each of the seven notes, one after another. Hum the starting note and listen for how \"home\" changes.",
+    "Write the seven mode names in order on a sticky note: Ionian, Dorian, Phrygian, Lydian, Mixolydian, Aeolian, Locrian.",
+    "Pick a major key you know well and name the mode that starts on each of its notes."
+   ]
+  },
+  "dorian": {
+   "id": "dorian",
+   "title": "Dorian",
+   "summary": "Natural minor with a raised 6th: the bright minor.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "**Dorian** is a minor scale with one change: the 6th is a whole step up from where natural minor has it. D natural minor is D E F G A B♭ C. D Dorian is D E F G A **B** C.\n\nThat raised 6th takes some of the gloom out of minor. It's all over funk, jazz and rock soloing, and in older folk tunes like \"Scarborough Fair\".\n\nParent scale: Dorian starts on the 2nd note of a major scale, so D Dorian uses C major's notes, A Dorian uses G major's, and so on.\n\nWhen to use it: over a minor 7th chord that's acting as the ii chord (Dm7 in the key of C), or anywhere you want minor that isn't sad."
+    },
+    {
+     "type": "explorer",
+     "name": "scale",
+     "options": {
+      "keys": [
+       "D",
+       "A",
+       "E",
+       "G",
+       "C"
+      ],
+      "types": [
+       "dorian",
+       "minor"
+      ]
+     },
+     "caption": "Flip between Dorian and natural minor on the same root and listen for the 6th."
+    }
+   ],
+   "practice": [
+    {
+     "gen": "modeSpell",
+     "weight": 2,
+     "params": {
+      "quals": [
+       "dorian"
+      ]
+     }
+    },
+    {
+     "gen": "modeColor",
+     "weight": 2,
+     "params": {
+      "quals": [
+       "dorian"
+      ]
+     }
+    },
+    {
+     "gen": "modeParent",
+     "weight": 2,
+     "params": {
+      "quals": [
+       "dorian"
+      ]
+     }
+    },
+    {
+     "gen": "modePick",
+     "weight": 2,
+     "params": {
+      "quals": [
+       "dorian"
+      ]
+     }
+    }
+   ],
+   "homework": [
+    "Play {pick:D|A|E} natural minor, then {pick:D|A|E} Dorian. Say out loud which note changed.",
+    "Improvise for two minutes over a single minor chord using Dorian. Lean on the 6th.",
+    "Write the Dorian mode starting on G, then check it here."
+   ]
+  },
+  "mixolydian": {
+   "id": "mixolydian",
+   "title": "Mixolydian",
+   "summary": "Major with a flat 7th: the sound of the dominant chord.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "**Mixolydian** is a major scale with a lowered 7th. G major is G A B C D E F♯. G Mixolydian is G A B C D E **F**.\n\nThat flat 7th is exactly the note that turns a major triad into a dominant 7th chord, so Mixolydian is the natural scale to play over a 7 chord. It's the sound of a lot of rock riffs, blues-rock, and Celtic fiddle tunes. The Beatles' \"Norwegian Wood\" is a well-known example.\n\nParent scale: Mixolydian starts on the 5th note of a major scale. G Mixolydian uses C major's notes."
+    },
+    {
+     "type": "explorer",
+     "name": "scale",
+     "options": {
+      "keys": [
+       "G",
+       "D",
+       "A",
+       "E",
+       "C"
+      ],
+      "types": [
+       "mixolydian",
+       "major"
+      ]
+     },
+     "caption": "Compare Mixolydian with major on the same root."
+    }
+   ],
+   "practice": [
+    {
+     "gen": "modeSpell",
+     "weight": 2,
+     "params": {
+      "quals": [
+       "mixolydian"
+      ]
+     }
+    },
+    {
+     "gen": "modeColor",
+     "weight": 2,
+     "params": {
+      "quals": [
+       "mixolydian"
+      ]
+     }
+    },
+    {
+     "gen": "modeFit",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "modePick",
+     "weight": 2,
+     "params": {
+      "quals": [
+       "mixolydian"
+      ]
+     }
+    }
+   ],
+   "homework": [
+    "Play {pick:G|D|A} major, then {pick:G|D|A} Mixolydian. Notice the 7th.",
+    "Strum or hold a {pick:G7|D7|A7} chord and noodle over it with the matching Mixolydian mode.",
+    "Write Mixolydian starting on F (careful: it has one flat)."
+   ]
+  },
+  "lydianPhrygian": {
+   "id": "lydianPhrygian",
+   "title": "Lydian and Phrygian",
+   "summary": "The dreamy one with a sharp 4, and the dark one with a flat 2.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "**Lydian** is a major scale with a raised 4th. F major is F G A B♭ C D E. F Lydian is F G A **B** C D E. That ♯4 makes it float; it's a favorite in film scores, and the theme from The Simpsons is built on it. Lydian starts on the 4th note of a major scale, so F Lydian uses C major's notes.\n\n**Phrygian** is a natural minor scale with a lowered 2nd. E natural minor is E F♯ G A B C D. E Phrygian is E **F** G A B C D. That half step right above the root gives it a tense, Spanish or flamenco flavor, and it shows up a lot in metal. Phrygian starts on the 3rd note of a major scale, so E Phrygian uses C major's notes."
+    },
+    {
+     "type": "explorer",
+     "name": "scale",
+     "options": {
+      "keys": [
+       "F",
+       "E",
+       "C",
+       "A",
+       "D"
+      ],
+      "types": [
+       "lydian",
+       "major",
+       "phrygian",
+       "minor"
+      ]
+     },
+     "caption": "Compare Lydian with major, and Phrygian with natural minor."
+    }
+   ],
+   "practice": [
+    {
+     "gen": "modeColor",
+     "weight": 3,
+     "params": {
+      "quals": [
+       "lydian",
+       "phrygian"
+      ]
+     }
+    },
+    {
+     "gen": "modeSpell",
+     "weight": 2,
+     "params": {
+      "quals": [
+       "lydian",
+       "phrygian"
+      ]
+     }
+    },
+    {
+     "gen": "modeName",
+     "weight": 2,
+     "params": {
+      "quals": [
+       "lydian",
+       "phrygian",
+       "dorian",
+       "mixolydian"
+      ]
+     }
+    },
+    {
+     "gen": "modePick",
+     "weight": 1,
+     "params": {
+      "quals": [
+       "lydian",
+       "phrygian"
+      ]
+     }
+    }
+   ],
+   "homework": [
+    "Play F Lydian slowly and stop on the B each time. Then play F major and stop on the B♭. Hear the difference?",
+    "Play E Phrygian over a low E note held (or an open E string). Lean on the F.",
+    "Write A Phrygian and D Lydian on paper."
+   ]
+  },
+  "locrianFit": {
+   "id": "locrianFit",
+   "title": "Locrian, and choosing a mode",
+   "summary": "The unstable seventh mode, and which mode goes with which chord.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "**Locrian** starts on the 7th note of a major scale: B C D E F G A in C major. It has a flat 2 and a flat 5, so its home chord is diminished. That makes it hard to rest on, and you'll rarely hear a whole song in Locrian. Its job is to fit over a half-diminished (m7♭5) chord.\n\nHere's the practical version of modes: match the scale to the chord.\n\n- **maj7** chord: Ionian, or Lydian for a brighter color\n- **m7** chord: Dorian (as ii), Aeolian (as vi) or Phrygian (as iii)\n- **7** chord: Mixolydian\n- **m7♭5** chord: Locrian\n\nIn the key of C, that means playing C major notes over everything, but thinking of D Dorian over Dm7, G Mixolydian over G7 and so on. Thinking this way helps you land on chord tones."
+    },
+    {
+     "type": "explorer",
+     "name": "scale",
+     "options": {
+      "keys": [
+       "B",
+       "E",
+       "A",
+       "D"
+      ],
+      "types": [
+       "locrian",
+       "minor"
+      ]
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "modeFit",
+     "weight": 3,
+     "params": {}
+    },
+    {
+     "gen": "modeColor",
+     "weight": 2,
+     "params": {
+      "quals": [
+       "locrian",
+       "dorian",
+       "mixolydian",
+       "lydian",
+       "phrygian"
+      ]
+     }
+    },
+    {
+     "gen": "modeName",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "modeParent",
+     "weight": 1,
+     "params": {}
+    }
+   ],
+   "homework": [
+    "Write the chord-to-mode list from this lesson from memory.",
+    "Over a ii–V–I in C (Dm7 G7 Cmaj7), play D Dorian, G Mixolydian, then C major. Notice they share every note.",
+    "Play B Locrian and try to make it sound \"finished.\" Notice why it rarely gets used as home."
+   ]
+  },
+  "triadInversions": {
+   "id": "triadInversions",
+   "title": "Triad inversions",
+   "summary": "Same three notes, different bass note.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "A triad doesn't have to be stacked root-3rd-5th. Move the bottom note up an octave and you get an **inversion**:\n\n- **Root position**: root on the bottom. C E G.\n- **1st inversion**: 3rd on the bottom. E G C.\n- **2nd inversion**: 5th on the bottom. G C E.\n\nIt's still a C major chord each time. What changes is the bass note and the feel: root position sounds solid, 1st inversion lighter, 2nd inversion a little unsettled.\n\nChord charts show inversions with a slash: **C/E** means \"C chord, E in the bass,\" which is 1st inversion. C/G is 2nd inversion.\n\nTo name an inversion you see, stack the notes back into 3rds to find the root, then check which note is on the bottom."
+    },
+    {
+     "type": "explorer",
+     "name": "inversion",
+     "options": {
+      "quals": [
+       "maj",
+       "min"
+      ]
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "invName",
+     "weight": 3,
+     "params": {}
+    },
+    {
+     "gen": "invBass",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "invSlash",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "invStaff",
+     "weight": 1,
+     "params": {}
+    }
+   ],
+   "homework": [
+    {
+     "piano": "Play C, F and G major in all three inversions with your right hand.",
+     "fretted": "Find C/E and C/G on your instrument (the bass note matters most)."
+    },
+    "Write the three inversions of {pick:G|D|F} major on paper.",
+    "Look at a chord chart for a song you know and find any slash chords."
+   ]
+  },
+  "seventhInversions": {
+   "id": "seventhInversions",
+   "title": "Seventh chord inversions",
+   "summary": "Four notes, four positions, including the 7th in the bass.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "Seventh chords have four notes, so they have one more inversion:\n\n- Root position: 1 3 5 7\n- 1st inversion: 3 5 7 1\n- 2nd inversion: 5 7 1 3\n- **3rd inversion: 7 1 3 5**\n\n3rd inversion puts the 7th in the bass, which pulls strongly downward. G7/F wants to resolve to C/E, the bass sliding down a half step from F to E. You'll hear that move in hymns, pop ballads and classical music all the time."
+    },
+    {
+     "type": "explorer",
+     "name": "inversion",
+     "options": {
+      "quals": [
+       "dom7",
+       "maj7",
+       "min7"
+      ]
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "invName",
+     "weight": 3,
+     "params": {
+      "quals": [
+       "dom7",
+       "maj7",
+       "min7"
+      ]
+     }
+    },
+    {
+     "gen": "invBass",
+     "weight": 2,
+     "params": {
+      "quals": [
+       "dom7",
+       "maj7",
+       "min7"
+      ]
+     }
+    },
+    {
+     "gen": "invSlash",
+     "weight": 2,
+     "params": {
+      "quals": [
+       "dom7",
+       "min7"
+      ]
+     }
+    },
+    {
+     "gen": "invStaff",
+     "weight": 1,
+     "params": {
+      "quals": [
+       "dom7"
+      ]
+     }
+    }
+   ],
+   "homework": [
+    "Spell G7 in all four positions on paper.",
+    {
+     "piano": "Play G7/F resolving to C/E. Feel the bass step down.",
+     "fretted": "Play an F bass note under a G7 sound, then move to E under C. Feel the pull."
+    },
+    "Find a 3rd-inversion chord in a piece of music you know (look for a slash with the 7th)."
+   ]
+  },
+  "voiceLeading": {
+   "id": "voiceLeading",
+   "title": "Smooth voice leading",
+   "summary": "Use inversions so chord changes barely move your hand.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "**Voice leading** is how each note of one chord moves to the next. Good voice leading follows two rules:\n\n1. Keep any note the two chords share right where it is.\n2. Move the other notes to the nearest note of the new chord.\n\nTake I–IV–V–I in C. Jumping from root position to root position (C E G → F A C → G B D) moves your whole hand up and down. With inversions it barely moves: **C** (C E G) → **F/C** (C F A) → **G/B** (B D G) → **C** (C E G). The C stays put, and the other notes step.\n\nThis is why piano parts and string arrangements sound smooth, and it's why guitarists learn the same chord in several places on the neck."
+    },
+    {
+     "type": "explorer",
+     "name": "inversion",
+     "options": {
+      "quals": [
+       "maj",
+       "min"
+      ]
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "voiceLead",
+     "weight": 4,
+     "params": {}
+    },
+    {
+     "gen": "invName",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "invBass",
+     "weight": 2,
+     "params": {}
+    }
+   ],
+   "homework": [
+    {
+     "piano": "Play C → F/C → G/B → C with your right hand, eyes closed, until it feels automatic.",
+     "fretted": "Find a C, F and G chord all within the same four frets and switch between them."
+    },
+    "Take I–V–vi–IV in {pick:G|D|C} and find voicings where at least one note stays still at every change.",
+    "Write the voicings you found on paper."
+   ]
+  },
+  "slashChords": {
+   "id": "slashChords",
+   "title": "Slash chords and bass lines",
+   "summary": "Using the bass note on purpose to build walking lines.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "A slash chord isn't always an inversion. **C/E** is an inversion because E is in C major. But **D/C** or **G/F** puts a bass note under a chord that doesn't contain it, which creates tension.\n\nThe most common use is a **descending bass line** under a progression: C – G/B – Am – Am/G – F. The chords stay simple, but the bass walks down step by step: C B A G F. You've heard this in a hundred songs.\n\nWhen you read a slash chord: play the chord in your right hand (or upper strings) and the slash note in the bass."
+    },
+    {
+     "type": "explorer",
+     "name": "inversion",
+     "options": {
+      "quals": [
+       "maj",
+       "min"
+      ]
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "invSlash",
+     "weight": 3,
+     "params": {}
+    },
+    {
+     "gen": "invName",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "invBass",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "voiceLead",
+     "weight": 1,
+     "params": {}
+    }
+   ],
+   "homework": [
+    "Play C – G/B – Am – Am/G – F and listen to the bass walk down.",
+    "Write your own descending line in {pick:G|D|A} using slash chords.",
+    "Find a slash chord in a songbook or chart and figure out if it's an inversion or not."
+   ]
+  },
+  "susChords": {
+   "id": "susChords",
+   "title": "Suspended chords",
+   "summary": "sus2 and sus4: chords with no 3rd.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "A **suspended** chord swaps the 3rd for a 2nd or a 4th:\n\n- **sus2**: 1 2 5. Csus2 = C D G.\n- **sus4**: 1 4 5. Csus4 = C F G.\n\nWith no 3rd, the chord is neither major nor minor. It sounds open and a little unresolved. Classically a sus4 \"resolves\" by dropping the 4th to the 3rd: Csus4 → C. Pop and rock often just leave it hanging for the open sound."
+    },
+    {
+     "type": "explorer",
+     "name": "chord",
+     "options": {
+      "quals": [
+       "sus2",
+       "sus4",
+       "maj",
+       "min"
+      ]
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "colorSpell",
+     "weight": 3,
+     "params": {
+      "quals": [
+       "sus2",
+       "sus4"
+      ]
+     }
+    },
+    {
+     "gen": "colorName",
+     "weight": 2,
+     "params": {
+      "quals": [
+       "sus2",
+       "sus4"
+      ]
+     }
+    },
+    {
+     "gen": "colorPick",
+     "weight": 2,
+     "params": {
+      "quals": [
+       "sus2",
+       "sus4"
+      ]
+     }
+    },
+    {
+     "gen": "earChord",
+     "weight": 1,
+     "params": {
+      "quals": [
+       "maj",
+       "min"
+      ]
+     }
+    }
+   ],
+   "homework": [
+    "Play {pick:D|A|G}sus4 → {pick:D|A|G} a few times and listen to it resolve.",
+    "Spell sus2 and sus4 on C, G and D on paper.",
+    "Replace one chord in a song you know with its sus2 version and see if you like it."
+   ]
+  },
+  "sixAdd9": {
+   "id": "sixAdd9",
+   "title": "6 and add9 chords",
+   "summary": "Adding color without a 7th.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "Two ways to color a major chord without turning it into a 7th chord:\n\n- **6** chord: add the 6th. C6 = C E G A. Sweet, a little old-fashioned, common in swing and country.\n- **add9**: add the 9th (the 2nd, an octave up). Cadd9 = C E G D. Bright and modern, a pop and acoustic guitar staple.\n\nCompare with **maj7** (C E G B), which adds the 7th instead. All three are \"fancy C,\" but each has its own mood."
+    },
+    {
+     "type": "explorer",
+     "name": "chord",
+     "options": {
+      "quals": [
+       "maj6",
+       "add9",
+       "maj7",
+       "maj"
+      ]
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "colorSpell",
+     "weight": 3,
+     "params": {
+      "quals": [
+       "maj6",
+       "add9"
+      ]
+     }
+    },
+    {
+     "gen": "colorName",
+     "weight": 2,
+     "params": {
+      "quals": [
+       "maj6",
+       "add9",
+       "maj7"
+      ]
+     }
+    },
+    {
+     "gen": "colorFormula",
+     "weight": 2,
+     "params": {
+      "quals": [
+       "maj6",
+       "add9",
+       "sus2",
+       "sus4"
+      ]
+     }
+    },
+    {
+     "gen": "colorPick",
+     "weight": 1,
+     "params": {
+      "quals": [
+       "maj6",
+       "add9"
+      ]
+     }
+    }
+   ],
+   "homework": [
+    "Play C, C6, Cadd9 and Cmaj7 back to back and describe each in one word.",
+    "Spell G6 and Gadd9.",
+    "Pick a song you play and swap a major chord for its add9."
+   ]
+  },
+  "extensions": {
+   "id": "extensions",
+   "title": "9ths, 11ths and 13ths",
+   "summary": "Keep stacking 3rds past the octave.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "Keep stacking 3rds on top of a 7th chord and you get **extensions**: the 9th, 11th and 13th. They're the 2nd, 4th and 6th, an octave higher.\n\n- **9**: 1 3 5 ♭7 9. C9 = C E G B♭ D.\n- **maj9**: 1 3 5 7 9. Cmaj9 = C E G B D.\n- **m9**: 1 ♭3 5 ♭7 9. Cm9 = C E♭ G B♭ D.\n- **13**: 1 3 5 ♭7 9 13. C13 = C E G B♭ D A. The 11th is usually left out because it clashes with the 3rd.\n\nNobody plays all six notes of a 13 chord on a guitar. Players drop the 5th first, then often the root (the bass player has it). What matters is the 3rd and 7th, which tell you the chord type, plus the color note on top."
+    },
+    {
+     "type": "explorer",
+     "name": "chord",
+     "options": {
+      "quals": [
+       "dom9",
+       "maj9",
+       "min9",
+       "dom13",
+       "dom7"
+      ]
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "colorSpell",
+     "weight": 3,
+     "params": {
+      "quals": [
+       "dom9",
+       "maj9",
+       "min9"
+      ]
+     }
+    },
+    {
+     "gen": "colorFormula",
+     "weight": 2,
+     "params": {
+      "quals": [
+       "dom9",
+       "maj9",
+       "min9",
+       "dom13"
+      ]
+     }
+    },
+    {
+     "gen": "colorName",
+     "weight": 2,
+     "params": {
+      "quals": [
+       "dom9",
+       "maj9",
+       "min9",
+       "dom13"
+      ]
+     }
+    },
+    {
+     "gen": "colorPick",
+     "weight": 1,
+     "params": {
+      "quals": [
+       "dom9",
+       "min9"
+      ]
+     }
+    }
+   ],
+   "homework": [
+    "Spell C9, Cmaj9 and Cm9 and circle the note that makes each one different.",
+    "Play a 7th chord, then add the 9th on top. Listen to the change.",
+    "Find a 9 or 13 chord in a funk or jazz chart and spell it."
+   ]
+  },
+  "dim7Altered": {
+   "id": "dim7Altered",
+   "title": "Diminished 7th and altered chords",
+   "summary": "Tension chords: °7, 7♭9 and 7♯9.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "**Diminished 7th** (°7): four notes, each a minor 3rd apart. B°7 = B D F A♭. Because the gaps are all equal, moving it up a minor 3rd gives you the same four notes. There are really only three different diminished 7th chords. It's great for tense moments and for sliding between chords.\n\n**Altered dominants** add tension to a dominant 7th so it pulls even harder to its resolution:\n\n- **7♭9**: 1 3 5 ♭7 ♭9. G7♭9 = G B D F A♭. Dark and classical-sounding.\n- **7♯9**: 1 3 5 ♭7 ♯9. E7♯9 = E G♯ B D F𝄪 (usually written as a G). Gritty; often called the \"Hendrix chord.\""
+    },
+    {
+     "type": "explorer",
+     "name": "chord",
+     "options": {
+      "quals": [
+       "dim7",
+       "dom7b9",
+       "dom7s9",
+       "dom7"
+      ]
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "colorSpell",
+     "weight": 2,
+     "params": {
+      "quals": [
+       "dim7",
+       "dom7b9"
+      ]
+     }
+    },
+    {
+     "gen": "colorName",
+     "weight": 2,
+     "params": {
+      "quals": [
+       "dim7",
+       "dom7b9",
+       "dom7s9"
+      ]
+     }
+    },
+    {
+     "gen": "colorFormula",
+     "weight": 2,
+     "params": {
+      "quals": [
+       "dim7",
+       "dom7b9",
+       "dom7s9",
+       "dom9"
+      ]
+     }
+    },
+    {
+     "gen": "colorPick",
+     "weight": 2,
+     "params": {
+      "quals": [
+       "dim7"
+      ]
+     }
+    }
+   ],
+   "homework": [
+    "Play B°7, D°7, F°7 and A♭°7. Notice they're the same four notes.",
+    "Play G7 → C, then G7♭9 → C. Which pulls harder?",
+    "Spell E7♯9 and A7♭9 on paper."
+   ]
+  },
+  "melodicMinor": {
+   "id": "melodicMinor",
+   "title": "Melodic minor",
+   "summary": "Raise the 6th and 7th: minor that climbs smoothly.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "Harmonic minor raised the 7th, but that left a big gap of three half steps between the 6th and 7th (F to G♯ in A minor). Singers found it awkward.\n\n**Melodic minor** fixes it by raising the 6th too: A B C D E **F♯ G♯** A. It's a major scale with a flat 3.\n\nIn classical music, melodic minor goes up with the raised notes and comes down as natural minor. In jazz, people use the raised version both ways, and it's the parent of several useful jazz scales."
+    },
+    {
+     "type": "explorer",
+     "name": "scale",
+     "options": {
+      "keys": [
+       "A",
+       "E",
+       "D",
+       "C"
+      ],
+      "types": [
+       "minor",
+       "harmonic",
+       "melodic"
+      ]
+     },
+     "caption": "Compare the three minor scales on the same root."
+    }
+   ],
+   "practice": [
+    {
+     "gen": "melodicWrite",
+     "weight": 3,
+     "params": {}
+    },
+    {
+     "gen": "writeMinor",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "harmonic",
+     "weight": 1,
+     "params": {}
+    },
+    {
+     "gen": "earScale",
+     "weight": 2,
+     "params": {
+      "quals": [
+       "major",
+       "minor",
+       "melodic"
+      ]
+     }
+    }
+   ],
+   "homework": [
+    "Play A natural, harmonic and melodic minor back to back.",
+    "Write melodic minor on {pick:E|D|G}.",
+    "Sing or hum melodic minor going up, then natural minor coming down."
+   ]
+  },
+  "minorChords": {
+   "id": "minorChords",
+   "title": "Chords in a minor key",
+   "summary": "i ii° III iv V VI VII, and why V is major.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "Build triads on natural minor and you get: **i ii° III iv v VI VII**. In A minor: Am B° C Dm Em F G.\n\nNotice the v is minor (Em). A minor v doesn't pull home very hard. So minor-key music almost always borrows the raised 7th from harmonic minor to make **V major** (E major in A minor, with G♯). That's the chord that makes a minor song feel like it's landing.\n\nSo the working set of chords in A minor is: Am B° C Dm **E** F G.\n\nThe relative major shares most of these. A minor and C major have the same chords, just a different home."
+    },
+    {
+     "type": "explorer",
+     "name": "diatonic",
+     "options": {
+      "minor": true
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "minorChord",
+     "weight": 4,
+     "params": {}
+    },
+    {
+     "gen": "minorNumeral",
+     "weight": 3,
+     "params": {}
+    },
+    {
+     "gen": "relMinor",
+     "weight": 1,
+     "params": {}
+    }
+   ],
+   "homework": [
+    "Play all seven chords in {pick:A|E|D} minor, using the major V.",
+    "Play E major → Am, then Em → Am. Which sounds more final?",
+    "Write the chords of E minor and D minor on paper."
+   ]
+  },
+  "minorProgressions": {
+   "id": "minorProgressions",
+   "title": "Minor progressions",
+   "summary": "i–iv–V, the Andalusian cadence, and ii–V–i in minor.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "A few progressions show up again and again in minor keys. We write them with numerals counted from the major scale, so ♭VI means \"a major chord on the lowered 6th.\"\n\n- **i–iv–V**: the minor version of I–IV–V. In A minor: Am Dm E.\n- **i–♭VI–♭III–♭VII**: a modern pop staple. Am F C G.\n- **i–♭VII–♭VI–V** (the Andalusian cadence): stepping down to a major V. Am G F E. Flamenco, surf rock, and plenty of rock ballads.\n- **iiø7–V7–i**: the minor ii–V–i of jazz. Bm7♭5 E7 Am."
+    },
+    {
+     "type": "explorer",
+     "name": "progression",
+     "options": {
+      "sets": [
+       "minor145",
+       "minorPop",
+       "minorAndalusian",
+       "minor251"
+      ],
+      "minor": true
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "minorProg",
+     "weight": 4,
+     "params": {}
+    },
+    {
+     "gen": "minorNumeral",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "earProg",
+     "weight": 1,
+     "params": {}
+    },
+    {
+     "gen": "minorChord",
+     "weight": 1,
+     "params": {}
+    }
+   ],
+   "homework": [
+    "Play the Andalusian cadence in {pick:A|E|D} minor four times through.",
+    "Play i–♭VI–♭III–♭VII in E minor and name a song it reminds you of.",
+    "Write iiø7–V7–i in D minor on paper."
+   ]
+  },
+  "secondaryDominants": {
+   "id": "secondaryDominants",
+   "title": "Secondary dominants",
+   "summary": "Borrow a V7 to point at any chord in the key.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "V7 pulls to I. You can use the same pull to aim at any other chord in the key: play the dominant 7th of that chord first. That's a **secondary dominant**, written **V7/x** (\"five of x\").\n\nIn C major:\n\n- V7/ii = A7 → Dm\n- V7/iii = B7 → Em\n- V7/IV = C7 → F\n- V7/V = D7 → G\n- V7/vi = E7 → Am\n\nTo find one: go up a perfect 5th from the target chord's root and make it a dominant 7th. You'll spot them because they contain a note outside the key (E7 has a G♯ in the key of C)."
+    },
+    {
+     "type": "explorer",
+     "name": "progression",
+     "options": {
+      "sets": [
+       "secDom",
+       "rhythm"
+      ]
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "secDomBuild",
+     "weight": 4,
+     "params": {}
+    },
+    {
+     "gen": "secDomFind",
+     "weight": 3,
+     "params": {}
+    },
+    {
+     "gen": "progNum",
+     "weight": 1,
+     "params": {
+      "quals": [
+       "secDom"
+      ]
+     }
+    }
+   ],
+   "homework": [
+    "In {pick:C|G|D}, play I – V7/vi – vi – IV and listen for the outside note.",
+    "Write V7/ii, V7/IV and V7/V in G major.",
+    "Find a secondary dominant in a song you know (look for a 7 chord on a root that isn't V)."
+   ]
+  },
+  "borrowedChords": {
+   "id": "borrowedChords",
+   "title": "Borrowed chords",
+   "summary": "Pull chords from the parallel minor: iv, ♭VI, ♭VII, ♭III.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "A **borrowed chord** comes from the parallel minor key, the minor key with the same root. In C major you can borrow from C minor. The common ones:\n\n- **iv**: Fm in C. Bittersweet; a favorite of 1960s pop.\n- **♭VII**: B♭ in C. Classic rock; I–♭VII–IV–I is everywhere.\n- **♭VI**: A♭ in C. Big, cinematic.\n- **♭III**: E♭ in C.\n\nI–IV–iv–I (C F Fm C) is one of the most emotional moves in pop. The A in F major drops to A♭ in F minor, then resolves to G in C."
+    },
+    {
+     "type": "explorer",
+     "name": "progression",
+     "options": {
+      "sets": [
+       "borrowed",
+       "bVII"
+      ]
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "borrowedName",
+     "weight": 3,
+     "params": {}
+    },
+    {
+     "gen": "borrowedSpot",
+     "weight": 3,
+     "params": {}
+    },
+    {
+     "gen": "progNum",
+     "weight": 2,
+     "params": {
+      "quals": [
+       "borrowed",
+       "bVII"
+      ]
+     }
+    }
+   ],
+   "homework": [
+    "Play C – F – Fm – C slowly and listen for the inner voice dropping.",
+    "Play I–♭VII–IV–I in {pick:G|D|A}.",
+    "Name the four common borrowed chords in G major."
+   ]
+  },
+  "twoFiveOne": {
+   "id": "twoFiveOne",
+   "title": "The ii–V–I with 7th chords",
+   "summary": "The jazz engine: ii7–V7–Imaj7.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "You met ii–V–I in unit 6. Jazz plays it with 7th chords: **ii7–V7–Imaj7**. In C: Dm7 G7 Cmaj7.\n\nIt works because each chord's root falls a 5th to the next (D → G → C), and the voice leading is beautiful: the 7th of each chord steps down to the 3rd of the next (C in Dm7 → B in G7, F in G7 → E in Cmaj7).\n\nJazz standards chain ii–Vs through different keys, so if you can spot and play this pattern in every key, you can read a large share of the jazz repertoire."
+    },
+    {
+     "type": "explorer",
+     "name": "progression",
+     "options": {
+      "sets": [
+       "251",
+       "rhythm"
+      ]
+     },
+     "caption": null
+    },
+    {
+     "type": "explorer",
+     "name": "diatonic",
+     "options": {
+      "sevenths": true
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "progNum",
+     "weight": 4,
+     "params": {
+      "quals": [
+       "251"
+      ]
+     }
+    },
+    {
+     "gen": "diaChord",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "secDomFind",
+     "weight": 1,
+     "params": {}
+    },
+    {
+     "gen": "tritoneSub",
+     "weight": 1,
+     "params": {}
+    }
+   ],
+   "homework": [
+    "Play ii7–V7–Imaj7 in C, F and B♭.",
+    "Write ii–V–I with 7ths in every flat key up to E♭.",
+    "Find three ii–Vs in a jazz standard's chord chart."
+   ]
+  },
+  "turnarounds": {
+   "id": "turnarounds",
+   "title": "Turnarounds",
+   "summary": "I–vi–ii–V and friends: getting back to the top.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "A **turnaround** is a short progression at the end of a section that sends you back to the beginning. The classic one is **I–vi–ii–V**: C Am Dm G.\n\nYou can spice it up with secondary dominants, turning vi into VI7 (A7 in C) so it pulls harder to ii: C A7 Dm G7. The \"rhythm changes\" pattern from Gershwin's \"I Got Rhythm\" stacks these up: I–vi–ii–V–iii–VI7–ii–V.\n\nA one-chord song can feel like it's going somewhere with a turnaround tacked on the end of each pass."
+    },
+    {
+     "type": "explorer",
+     "name": "progression",
+     "options": {
+      "sets": [
+       "turnaround",
+       "rhythm",
+       "secDom"
+      ]
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "progNum",
+     "weight": 4,
+     "params": {
+      "quals": [
+       "turnaround",
+       "rhythm"
+      ]
+     }
+    },
+    {
+     "gen": "secDomBuild",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "earProg",
+     "weight": 2,
+     "params": {}
+    }
+   ],
+   "homework": [
+    "Play I–vi–ii–V in {pick:C|G|F} four times through.",
+    "Swap vi for VI7 and hear the difference.",
+    "Listen for a turnaround at the end of a verse in a song you know."
+   ]
+  },
+  "tritoneSubs": {
+   "id": "tritoneSubs",
+   "title": "Tritone substitution",
+   "summary": "Swap a dominant 7th for the one a tritone away.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "Here's a jazz trick: any dominant 7th chord can be replaced by the dominant 7th a **tritone** (six half steps) away. G7 can become **D♭7**.\n\nWhy it works: G7 is G B D F, and D♭7 is D♭ F A♭ C♭. The important notes, the 3rd and 7th, are B and F in G7 and F and C♭ (= B) in D♭7. Same two notes, swapped. Those two notes are what create the pull to C.\n\nThe result is a ii–♭II7–I: Dm7 D♭7 Cmaj7, with the bass sliding down by half steps."
+    },
+    {
+     "type": "explorer",
+     "name": "chord",
+     "options": {
+      "quals": [
+       "dom7",
+       "dom9",
+       "dom13"
+      ]
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "tritoneSub",
+     "weight": 4,
+     "params": {}
+    },
+    {
+     "gen": "secDomBuild",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "progNum",
+     "weight": 2,
+     "params": {
+      "quals": [
+       "251"
+      ]
+     }
+    }
+   ],
+   "homework": [
+    "Play Dm7 – G7 – Cmaj7, then Dm7 – D♭7 – Cmaj7. Listen to the bass.",
+    "Find the tritone sub for D7, A7 and E7.",
+    "Spell G7 and D♭7 and circle the two notes they share."
+   ]
+  },
+  "modulation": {
+   "id": "modulation",
+   "title": "Modulation and related keys",
+   "summary": "Which keys are easy to move to, and why.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "**Modulation** means changing key in the middle of a piece. Some keys are much easier to move to than others.\n\n**Closely related keys** share all but one note with the home key. For any major key they are: the keys one step either way on the circle (IV and V), and the relative minors of all three. For C major: G major, F major, A minor, E minor and D minor.\n\nIn major-key classical pieces, moving to the V key is the most common modulation. Pop songs love a different move: the \"truck driver\" key change, jumping up a half or whole step for the last chorus. That one isn't smooth at all; it's meant to lift."
+    },
+    {
+     "type": "explorer",
+     "name": "circle",
+     "options": {
+      "mode": "basic"
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "closeKey",
+     "weight": 4,
+     "params": {}
+    },
+    {
+     "gen": "relMinor",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "circleNext",
+     "weight": 2,
+     "params": {}
+    }
+   ],
+   "homework": [
+    "List the closely related keys of {pick:G|D|F} major.",
+    "Play a melody you know, then play it again a whole step higher. Feel the lift.",
+    "Listen for a key change in a song's last chorus."
+   ]
+  },
+  "pivotChords": {
+   "id": "pivotChords",
+   "title": "Pivot chords",
+   "summary": "Chords that belong to both keys make the smoothest modulations.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "The smoothest way to change key is through a **pivot chord**: a chord that's in both the old key and the new one.\n\nC major and G major share C, Em, G and Am. To move from C to G, play one of those (say Am), treat it as ii in G, then go to D (V in G) and G. Your ear accepts Am as home-key material, and by the time D arrives you're already in G.\n\nTo find pivots: list the chords in both keys and see which appear in both lists."
+    },
+    {
+     "type": "explorer",
+     "name": "diatonic",
+     "options": {},
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "pivot",
+     "weight": 4,
+     "params": {}
+    },
+    {
+     "gen": "diaNumeral",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "closeKey",
+     "weight": 2,
+     "params": {}
+    }
+   ],
+   "homework": [
+    "List the chords shared by {pick:G and D|F and C|D and A} major.",
+    "Play C – F – Am – D – G and notice where the key changes.",
+    "Write your own modulation from G to D using a pivot chord."
+   ]
+  },
+  "transposing": {
+   "id": "transposing",
+   "title": "Transposing a song",
+   "summary": "Move any song to any key with numerals.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "**Transposing** means moving a whole song to a new key, usually to suit a singer's range or to make it easier to play.\n\nThe trick is numerals. Turn the chords into Roman numerals in the old key, then read them back in the new key. C – Am – F – G in C is I – vi – IV – V. In D that's D – Bm – G – A.\n\nGuitarists also cheat with a capo: put it on fret 2 and play C shapes to sound in D. That's transposing too, just done by the instrument."
+    },
+    {
+     "type": "explorer",
+     "name": "progression",
+     "options": {},
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "transpose",
+     "weight": 4,
+     "params": {}
+    },
+    {
+     "gen": "diaChord",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "diaNumeral",
+     "weight": 2,
+     "params": {}
+    }
+   ],
+   "homework": [
+    "Transpose a song you know into a key one step higher.",
+    "Write I–V–vi–IV in five different keys.",
+    {
+     "guitar": "Play a song with a capo on fret 2 using C shapes. Which key are you in?",
+     "piano": "Play a simple song in C, then in G.",
+     "bass": "Play a bass line you know in C, then move it to D."
+    }
+   ]
+  },
+  "earIntervals": {
+   "id": "earIntervals",
+   "title": "Hearing intervals",
+   "summary": "Name the distance between two notes by ear.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "Ear training turns theory into something you can hear. Start with intervals.\n\nA lot of people use the start of a familiar song for each interval:\n\n- **Major 2nd**: \"Frère Jacques\" (the first two notes)\n- **Major 3rd**: \"When the Saints Go Marching In\" (Oh, when)\n- **Perfect 4th**: \"Here Comes the Bride\"\n- **Perfect 5th**: \"Twinkle, Twinkle, Little Star\" (Twinkle, twinkle)\n- **Major 6th**: \"My Bonnie Lies Over the Ocean\" (My Bon-)\n- **Octave**: \"Somewhere Over the Rainbow\" (Some-where)\n\nPick songs that work for you. Use the explorer to hear each interval as many times as you like."
+    },
+    {
+     "type": "explorer",
+     "name": "ear",
+     "options": {
+      "kind": "intervals"
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "earInterval",
+     "weight": 5,
+     "params": {
+      "quals": [
+       "M3",
+       "P4",
+       "P5",
+       "P8"
+      ]
+     }
+    },
+    {
+     "gen": "earInterval",
+     "weight": 3,
+     "params": {
+      "quals": [
+       "M2",
+       "m3",
+       "M3",
+       "P4",
+       "P5",
+       "M6",
+       "P8"
+      ]
+     }
+    }
+   ],
+   "homework": [
+    "Sing each reference song from this lesson and match it to the interval.",
+    "Play the Interval Ears game for five minutes.",
+    "Find your own reference song for the minor 3rd."
+   ]
+  },
+  "earChords": {
+   "id": "earChords",
+   "title": "Hearing chord qualities",
+   "summary": "Major, minor, diminished and augmented by ear.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "Each triad quality has its own color, and you can learn to hear it in a second or two:\n\n- **Major**: bright, settled\n- **Minor**: darker, sadder\n- **Diminished**: tense, squeezed, wants to move\n- **Augmented**: floating, unresolved, a bit eerie\n\nStart by telling major from minor. Once that's easy, add the other two. Listen to the explorer side by side before you try the quiz."
+    },
+    {
+     "type": "explorer",
+     "name": "ear",
+     "options": {
+      "kind": "chords"
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "earChord",
+     "weight": 4,
+     "params": {
+      "quals": [
+       "maj",
+       "min"
+      ]
+     }
+    },
+    {
+     "gen": "earChord",
+     "weight": 4,
+     "params": {
+      "quals": [
+       "maj",
+       "min",
+       "dim",
+       "aug"
+      ]
+     }
+    }
+   ],
+   "homework": [
+    "Play the Chord Ears game until you can get 10 in a row.",
+    "Play random major and minor chords on your instrument with your eyes closed and name them.",
+    "Listen to a song and decide if each chord is major or minor."
+   ]
+  },
+  "earScales": {
+   "id": "earScales",
+   "title": "Hearing scales and modes",
+   "summary": "Major, minor and modes by ear.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "Scales have moods too. Major sounds bright, natural minor sad, harmonic minor exotic because of the big gap near the top, and the modes each have their color note.\n\nWhen you listen, focus on the 3rd first (major or minor?), then the 6th and 7th. That narrows it down quickly."
+    },
+    {
+     "type": "explorer",
+     "name": "ear",
+     "options": {
+      "kind": "scales"
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "earScale",
+     "weight": 4,
+     "params": {
+      "quals": [
+       "major",
+       "minor"
+      ]
+     }
+    },
+    {
+     "gen": "earScale",
+     "weight": 4,
+     "params": {
+      "quals": [
+       "major",
+       "minor",
+       "harmonic",
+       "dorian",
+       "mixolydian"
+      ]
+     }
+    }
+   ],
+   "homework": [
+    "Play major and natural minor on the same root, eyes closed, and name them.",
+    "Have someone play a scale for you and guess which it is.",
+    "Hum Dorian and Mixolydian and listen for the 6th and 7th."
+   ]
+  },
+  "earProgressions": {
+   "id": "earProgressions",
+   "title": "Hearing progressions",
+   "summary": "Recognize common chord progressions by ear.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "The progressions from unit 6 cover a huge share of songs. Learning to hear them means you can figure out songs by ear.\n\nListen to the bass first. I–IV–V–I steps up from 1 to 4 to 5. I–V–vi–IV drops from 5 to 6 and back to 4. vi–IV–I–V starts on a minor chord. ii–V–I starts on a minor chord and resolves in three moves.\n\nAll examples here are in C."
+    },
+    {
+     "type": "explorer",
+     "name": "progression",
+     "options": {},
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "earProg",
+     "weight": 6,
+     "params": {}
+    },
+    {
+     "gen": "progIdentify",
+     "weight": 2,
+     "params": {}
+    }
+   ],
+   "homework": [
+    "Pick a pop song and try to identify its progression by ear.",
+    "Play I–V–vi–IV and vi–IV–I–V back to back. They're the same chords starting in different places.",
+    "Play the Chord Ears game for five minutes."
+   ]
+  },
+  "octaveShapes": {
+   "id": "octaveShapes",
+   "title": "Finding any note fast",
+   "summary": "Octave shapes so you can find a note anywhere.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "To play fluently you need to find any note quickly, in more than one place."
+    },
+    {
+     "type": "text",
+     "only": "piano",
+     "md": "On the piano, octaves are always the same shape: eight white keys apart, or your thumb and pinky stretched. Learn to see each note relative to the groups of black keys."
+    },
+    {
+     "type": "text",
+     "only": "guitar",
+     "md": "On guitar, two **octave shapes** do most of the work. From a note on the low E or A string, the octave is two strings up and two frets higher. From the D or G string, it's two strings up and three frets higher (because of the B string tuning). Once you know the notes on the low E and A strings, these shapes give you the rest."
+    },
+    {
+     "type": "text",
+     "only": "bass",
+     "md": "On bass, the octave is two strings up and two frets higher. Learn the notes on the E and A strings and use that shape to find everything else."
+    },
+    {
+     "type": "explorer",
+     "name": "notes",
+     "options": {
+      "naturals": false
+     },
+     "caption": "Tap any note to see every place it lives."
+    }
+   ],
+   "practice": [
+    {
+     "gen": "findAny",
+     "weight": 3,
+     "params": {}
+    },
+    {
+     "gen": "idAny",
+     "weight": 3,
+     "params": {}
+    },
+    {
+     "gen": "findNatural",
+     "weight": 2,
+     "params": {}
+    }
+   ],
+   "homework": [
+    "Pick a note and find it in every place you can, as fast as you can.",
+    "Play the Note Hunt game in survival mode and try to beat your best.",
+    {
+     "fretted": "Learn every natural note on the {lowstring} and A strings.",
+     "piano": "Play every C on the keyboard, then every F♯."
+    }
+   ]
+  },
+  "arpeggios": {
+   "id": "arpeggios",
+   "title": "Arpeggios across the instrument",
+   "summary": "Chord tones everywhere, not just in one shape.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "An **arpeggio** is a chord played one note at a time. Knowing where every chord tone lives lets you outline the harmony anywhere on your instrument, which is the backbone of good soloing and bass lines.\n\nStart with triads, then add the 7th. Say the chord tone (1, 3, 5, 7) as you play each note."
+    },
+    {
+     "type": "explorer",
+     "name": "chord",
+     "options": {
+      "quals": [
+       "maj",
+       "min",
+       "dom7",
+       "maj7",
+       "min7"
+      ]
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "arpAll",
+     "weight": 4,
+     "params": {}
+    },
+    {
+     "gen": "sevPick",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "triadPick",
+     "weight": 2,
+     "params": {}
+    }
+   ],
+   "homework": [
+    "Play a {pick:C|G|A} major arpeggio as high and low as your instrument allows.",
+    "Play the Chord Tone Hunt game.",
+    "Over a slow I–IV–V, play only chord tones of each chord."
+   ]
+  },
+  "scalePositions": {
+   "id": "scalePositions",
+   "title": "Scale positions",
+   "summary": "One scale, several hand positions, covering the whole instrument.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "Playing a scale in one spot is a start. Fluent players can play it anywhere."
+    },
+    {
+     "type": "text",
+     "only": "guitar",
+     "md": "On guitar, a major scale breaks into five overlapping **positions** that cover the neck. They're often called the **CAGED** system, because each position surrounds one of the open chord shapes C, A, G, E and D moved up the neck. Learn one position at a time, then the links between them. Use the scale explorer's \"One position\" view and step through the starting frets."
+    },
+    {
+     "type": "text",
+     "only": "bass",
+     "md": "On bass, each position covers four frets with one finger per fret. Learn the major scale starting on the E string, then on the A string, and you can play it in any key by sliding the shape."
+    },
+    {
+     "type": "text",
+     "only": "piano",
+     "md": "On the piano, the \"position\" is your fingering. C major uses 1-2-3, thumb under, 1-2-3-4-5 in the right hand. Learn the standard fingering for each key so your hand never runs out of fingers."
+    },
+    {
+     "type": "explorer",
+     "name": "scale",
+     "options": {
+      "keys": [
+       "C",
+       "G",
+       "D",
+       "A",
+       "E",
+       "F"
+      ],
+      "types": [
+       "major"
+      ]
+     },
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "positionKey",
+     "weight": 4,
+     "params": {}
+    },
+    {
+     "gen": "pickScale",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "writeScale",
+     "weight": 2,
+     "params": {}
+    }
+   ],
+   "homework": [
+    {
+     "guitar": "Learn one new position of {pick:G|C|A} major this week.",
+     "piano": "Practice the fingering for {pick:G|D|F} major, hands separately.",
+     "bass": "Play {pick:G|C|A} major in two different positions."
+    },
+    "Play the Scale Builder game.",
+    "Play a scale from the lowest note your instrument has to the highest without stopping."
+   ]
+  },
+  "playingChanges": {
+   "id": "playingChanges",
+   "title": "Playing over chord changes",
+   "summary": "Putting it together: aim for chord tones as the chords move.",
+   "addedIn": 2,
+   "blocks": [
+    {
+     "type": "text",
+     "only": null,
+     "md": "Everything in this course comes together when you play over a progression. The simplest strategy that sounds good: **land on a chord tone when the chord changes**, and use the scale of the key to connect them.\n\nTry it over I–IV–V–I. When the IV arrives, aim for its 3rd. When V arrives, aim for its 3rd. You'll hear the melody follow the harmony.\n\nAfter that, try the same thing over a ii–V–I and then a minor progression. Use the progression explorer to hear the changes while you play."
+    },
+    {
+     "type": "explorer",
+     "name": "progression",
+     "options": {},
+     "caption": null
+    }
+   ],
+   "practice": [
+    {
+     "gen": "arpAll",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "diaChord",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "progMissing",
+     "weight": 2,
+     "params": {}
+    },
+    {
+     "gen": "earProg",
+     "weight": 2,
+     "params": {}
+    }
+   ],
+   "homework": [
+    "Over a slow I–IV–V–I, land on the 3rd of each chord as it changes.",
+    "Record yourself improvising over a progression and listen back.",
+    "Make up a short melody that uses only chord tones on beat one of each bar."
+   ]
   }
- }
+ },
+ "games": [
+  {
+   "id": "find",
+   "title": "Note Hunt",
+   "desc": "A note appears. Tap every place it lives on your instrument.",
+   "engine": "find",
+   "secs": 60,
+   "icon": "scope"
+  },
+  {
+   "id": "name",
+   "title": "Name That Note",
+   "desc": "A spot lights up. Name it fast.",
+   "engine": "name",
+   "secs": 60,
+   "icon": "character.cursor.ibeam"
+  },
+  {
+   "id": "chord",
+   "title": "Chord Tone Hunt",
+   "desc": "Tap every note of the chord, everywhere.",
+   "engine": "chordhunt",
+   "secs": 90,
+   "icon": "square.grid.3x3.fill",
+   "params": {
+    "quals": [
+     "maj",
+     "min"
+    ]
+   }
+  },
+  {
+   "id": "staff",
+   "title": "Staff Sprint",
+   "desc": "Read notes off the staff as fast as you can.",
+   "engine": "staff",
+   "secs": 60,
+   "icon": "music.note.list"
+  },
+  {
+   "id": "earInterval",
+   "title": "Interval Ears",
+   "desc": "Hear two notes, name the interval.",
+   "engine": "earInterval",
+   "secs": 90,
+   "icon": "ear",
+   "params": {
+    "quals": [
+     "M2",
+     "m3",
+     "M3",
+     "P4",
+     "P5",
+     "M6",
+     "P8"
+    ]
+   }
+  },
+  {
+   "id": "earChord",
+   "title": "Chord Ears",
+   "desc": "Hear a chord. Major, minor, diminished or augmented?",
+   "engine": "earChord",
+   "secs": 90,
+   "icon": "waveform",
+   "params": {
+    "quals": [
+     "maj",
+     "min",
+     "dim",
+     "aug"
+    ]
+   }
+  },
+  {
+   "id": "keysig",
+   "title": "Key Signature Blitz",
+   "desc": "Name the major key from its key signature.",
+   "engine": "keysig",
+   "secs": 60,
+   "icon": "number"
+  },
+  {
+   "id": "circle",
+   "title": "Circle Sprint",
+   "desc": "Find IV, V and the relative minor on the circle.",
+   "engine": "circle",
+   "secs": 60,
+   "icon": "circle.dashed"
+  },
+  {
+   "id": "scaleBuild",
+   "title": "Scale Builder",
+   "desc": "Tap the notes of the scale in order.",
+   "engine": "scaleBuild",
+   "secs": 90,
+   "icon": "stairs",
+   "params": {
+    "types": [
+     "major"
+    ]
+   }
+  },
+  {
+   "id": "chordBuild",
+   "title": "Chord Builder",
+   "desc": "Tap every note of the chord, any order, any octave.",
+   "engine": "chordBuild",
+   "secs": 90,
+   "icon": "cube",
+   "params": {
+    "quals": [
+     "maj",
+     "min",
+     "dim",
+     "dom7",
+     "maj7",
+     "min7"
+    ]
+   }
+  },
+  {
+   "id": "transpose",
+   "title": "Transposer",
+   "desc": "Play the progression back in a new key, chord by chord.",
+   "engine": "transpose",
+   "secs": 90,
+   "icon": "arrow.left.arrow.right"
+  }
+ ]
 }
